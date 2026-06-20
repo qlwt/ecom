@@ -1,0 +1,70 @@
+@use "@/u" as u;
+
+.root {
+  display: grid;
+  grid-template-columns: u.rem(120) 1fr;
+  grid-template-areas: "nav view";
+  gap: u.rem(10);
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto u.rem(120);
+
+    grid-template-areas:
+      "view"
+      "nav ";
+  }
+}
+
+.nav {
+  grid-area: nav;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  contain: size;
+
+  gap: u.rem(10);
+  scrollbar-width: thin;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    contain: unset;
+
+    flex-direction: row;
+  }
+}
+
+.nav__item {
+  aspect-ratio: 1.4;
+
+  --card_img-icon-fontsize: #{u.rem(24)};
+}
+
+@keyframes a_preview_new__drag {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}
+
+.preview__card {
+  grid-area: nav;
+}
+
+.preview {
+  aspect-ratio: 1.4;
+}
+
+.preview_drag {
+  &::before {
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: a_preview_new__drag;
+    animation-direction: alternate;
+  }
+}

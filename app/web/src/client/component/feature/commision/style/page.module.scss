@@ -1,0 +1,196 @@
+@use "@/u" as u;
+
+.root {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: u.rem(30);
+  padding: 40px u.rem(80);
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 5vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    padding: 40px 5vw;
+  }
+}
+
+.head {
+  align-self: flex-end;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  z-index: u.$z_header;
+  position: sticky;
+  left: 0;
+  top: 80px;
+
+  gap: u.rem(15);
+  border-radius: 4px;
+  padding: u.rem(15) u.rem(20);
+
+  background-color: var(--p-bg-primary-0800);
+  box-shadow: 0 0 u.rem(7) 0px var(--p-bg-primary-1700);
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.head__price {
+  font-weight: 500;
+  font-size: u.rem(18);
+}
+
+.grid {
+  display: flex;
+  gap: u.rem(15);
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  gap: u.rem(20);
+  flex-direction: column;
+  padding: u.rem(15) u.rem(20);
+
+  background-color: var(--p-bg-primary-0800);
+  box-shadow: 0 0 u.rem(7) 0px var(--p-bg-primary-1700);
+}
+
+.form__line__header {
+  display: flex;
+  gap: u.rem(10);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.identifier {
+  margin: 0;
+  font-weight: 500;
+  font-size: u.rem(24);
+  color: var(--p-text-primary-1200);
+}
+
+.form__line_names {
+  display: grid;
+  gap: u.rem(10);
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.form__line_ddns {
+  display: grid;
+  gap: u.rem(10);
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  grid-template-areas:
+    "region   city    "
+    "terminal terminal";
+
+  &> :nth-child(1) {
+    grid-area: region;
+  }
+
+  &> :nth-child(2) {
+    grid-area: city;
+  }
+
+  &> :nth-child(3) {
+    grid-area: terminal;
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+      "region  "
+      "city    "
+      "terminal";
+  }
+}
+
+.form__line_contacts {
+  display: flex;
+  gap: u.rem(10);
+  flex-wrap: wrap;
+}
+
+.form__line_payments {
+  display: flex;
+  gap: u.rem(20);
+  align-items: center;
+  justify-content: flex-end;
+
+  &:not(:first-child) {
+    margin-top: u.rem(20);
+  }
+}
+
+.price {
+  margin: 0;
+  font-weight: 500;
+  font-size: u.rem(20);
+  color: var(--p-text-primary-1200);
+}
+
+.alerts {
+  display: flex;
+  gap: u.rem(20);
+  flex-direction: column;
+}
+
+.alert {
+  border-radius: 4px;
+  font-size: u.rem(18);
+  padding: u.rem(20) u.rem(30);
+
+  &._error {
+    color: var(--p-text-s_red-1000);
+    background-color: var(--p-bg-s_red-1000);
+  }
+}
+
+.alert__acts {
+  display: flex;
+  gap: u.rem(10);
+  justify-content: flex-end;
+}
+
+.alert__act {
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+  font-size: u.rem(18);
+  color: var(--p-text-s_blue-1000);
+  background-color: var(--p-bg-s_blue-1200);
+
+  border-radius: 4px;
+  padding: u.rem(10) u.rem(20);
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover, &:focus {
+    background-color: var(--p-bg-s_blue-1400);
+  }
+
+  &:active {
+    background-color: var(--p-bg-s_blue-1600);
+  }
+}

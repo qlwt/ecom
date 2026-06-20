@@ -1,0 +1,151 @@
+@use "@/u" as u;
+
+.root {
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px u.rem(80);
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 5vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    padding: 40px 5vw;
+  }
+}
+
+.form {
+  display: flex;
+  gap: u.rem(25);
+  flex-direction: column;
+
+  width: 30%;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    width: 35%;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    width: 90%;
+  }
+}
+
+.label__view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label__text {
+  font-size: u.rem(17);
+  line-height: u.rem(28);
+
+  color: var(--p-text-primary-1000);
+}
+
+.label__link {
+  font-size: u.rem(17);
+  line-height: u.rem(32);
+
+  color: var(--p-link-primary-1000);
+
+  &:hover,
+  &:focus {
+    color: var(--p-link-primary-1200);
+  }
+
+  &:active {
+    color: var(--p-link-primary-1400);
+  }
+}
+
+.line {
+
+  &._header {
+    text-align: center;
+  }
+
+  &._field {
+    display: flex;
+    gap: u.rem(2);
+    flex-direction: column;
+  }
+
+  &._button {
+    display: flex;
+    gap: u.rem(10);
+  }
+
+  &._buttonsplit {
+    display: grid;
+    gap: u.rem(10);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-auto-flow: column;
+  }
+}
+
+.header {
+  font-size: u.rem(36);
+  margin: 0;
+}
+
+.form__btn {
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  overflow: hidden;
+  position: relative;
+
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  padding: u.rem(10) 0;
+
+  font-weight: 500;
+  font-size: u.rem(17);
+  color: var(--p-text-s_blue-1000);
+  background-color: var(--p-bg-s_blue-1000);
+
+  transition: background-color u.$trtime_fast;
+
+  &:disabled {
+    background-color: var(--p-bg-s_blue-0100);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var(--p-bg-s_blue-1200);
+    }
+
+    &:active {
+      background-color: var(--p-bg-s_blue-1300);
+    }
+  }
+}
+
+.pendingfg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.2);
+}

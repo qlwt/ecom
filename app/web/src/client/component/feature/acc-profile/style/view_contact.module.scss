@@ -1,0 +1,19 @@
+@use "@/u" as u;
+
+.view {
+  display: flex;
+  gap: u.rem(20);
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  gap: u.rem(15);
+  flex-direction: column;
+
+  padding: u.rem(20);
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0900);
+  box-shadow: 0 0 20px 5px var(--p-bg-primary-1300);
+}

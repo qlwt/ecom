@@ -1,0 +1,58 @@
+{
+    "name": "@fst/rest",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "run-s build:clean build:bundle",
+        "build:clean": "rimraf ./build",
+        "build:bundle": "rollup -c ./script/rollup/rollup.config.js",
+        "build:watch": "rollup -c ./script/rollup/rollup.config.js --watch"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-image": "^3.0.3",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-typescript": "^12.1.4",
+        "@types/multer": "^2.0.0",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/stream-json": "^1.7.8",
+        "@types/express": "^5.0.3",
+        "@types/pg": "^8.15.5",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.50.1",
+        "sharp": "^0.34.5",
+        "typescript": "^5.9.2",
+        "typescript-transform-paths": "^3.5.5"
+    },
+    "dependencies": {
+        "kysely": "^0.28.5",
+        "pg": "^8.16.3",
+        "@fst/cst": "workspace:@fst/cst@&1.0.0",
+        "@fst/config": "workspace:@fst/config^1.0.0",
+        "@fst/express-utils": "workspace:@fst/express-utils@&1.0.0",
+        "@fst/syntax-search": "workspace:@fst/syntax-search@&1.0.0",
+        "@qyu/syntax-core": "^1.0.0",
+        "compression": "^1.8.1",
+        "cookie-parser": "^1.4.7",
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0",
+        "express-rate-limit": "^8.3.2",
+        "firebase-admin": "^13.8.0",
+        "jsonwebtoken": "^9.0.3",
+        "multer": "^2.0.2",
+        "stream-chain": "^3.4.1",
+        "stream-json": "^1.9.1",
+        "tslib": "^2.8.1",
+        "uuid": "^13.0.0",
+        "zod": "^4.1.8"
+    },
+    "exports": {
+        ".": {
+            "import": "./build/entry/index.js",
+            "types": "./build/declaration/index.d.ts"
+        }
+    }
+}

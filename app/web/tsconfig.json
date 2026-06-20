@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.json",
+
+    "compilerOptions": {
+        "types": ["vite/client"],
+
+        "paths": {
+            "@src/*": [
+                "./src/*"
+            ],
+            "@client/*": [
+                "./src/client/*"
+            ]
+        }
+    },
+
+    "include": [
+        "script/**/*",
+        "src/**/*"
+    ]
+}

@@ -1,0 +1,142 @@
+@use "@u" as u;
+
+.root {
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  padding: u.rem(10);
+  border-radius: 4px;
+
+  font-size: u.rem(18);
+  color: var(--p-text-primary-0800);
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover,
+  &:focus {
+    background-color: var(--p-bg-primary-1200);
+  }
+
+  &:active {
+    background-color: var(--p-bg-primary-1300);
+  }
+
+  &._cart {
+    position: relative
+  }
+}
+
+.act_cart__result {
+  display: flex;
+  padding: u.rem(10);
+  justify-content: flex-end;
+}
+
+.ddnlist {
+  border-radius: 4px;
+  box-shadow: 0 0 u.rem(10) u.rem(0) var(--p-border-primary-0400);
+
+  &._cart {
+    margin-right: 5vw;
+
+    @media screen and (max-width: u.$scwidth_xsm) {
+      margin-right: 0;
+    }
+  }
+}
+
+.ddncontent {
+  z-index: u.$z_dropdown;
+
+  border-radius: 4px;
+  border: 1px solid var(--p-border-primary-0400);
+
+  background-color: var(--p-bg-primary-0900);
+
+  ._lang & {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._cart & {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    width: 30vw;
+    height: 40vh;
+
+    @media screen and (max-width: u.$scwidth_sm) {
+      width: 45vw;
+    }
+
+    @media screen and (max-width: u.$scwidth_xsm) {
+      width: 100vw;
+    }
+  }
+}
+
+.list__wrapper {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list__btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  white-space: nowrap;
+  font-size: u.rem(16);
+  color: var(--p-text-primary-0800);
+
+  padding: u.rem(10) u.rem(20);
+  background-color: transparent;
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover,
+  &:focus {
+    background-color: var(--p-bg-primary-1100);
+  }
+
+  &:active {
+    background-color: var(--p-bg-primary-1300);
+  }
+
+  &._withicon {
+    display: flex;
+    align-items: center;
+    gap: u.rem(10);
+  }
+}
+
+.counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: u.rem(20);
+  height: u.rem(20);
+  letter-spacing: 0;
+
+  font-size: u.rem(13);
+
+  transform: translateX(25%) translateY(-25%);
+
+  border-radius: 50%;
+  color: var(--p-text-s_red-1000);
+  background-color: var(--p-bg-s_red-1000);
+}

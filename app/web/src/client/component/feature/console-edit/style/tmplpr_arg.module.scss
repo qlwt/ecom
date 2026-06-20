@@ -1,0 +1,73 @@
+@use "@/u" as u;
+
+.line {
+  padding-left: u.rem(20);
+  padding-right: u.rem(20);
+
+  &:first-child {
+    padding-top: u.rem(20);
+  }
+
+  &:not(:last-child) {
+    padding-bottom: u.rem(10);
+    padding-left: u.rem(20);
+    padding-right: u.rem(20);
+  }
+
+  &:last-child {
+    padding-bottom: u.rem(20);
+  }
+
+  &:not(:first-child) {
+    padding-top: u.rem(10);
+  }
+
+  &._formula {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+.line_topmenu {
+  display: flex;
+  gap: u.rem(10);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inoption_head {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.node {
+  // --card_img-layerf-bgc: var(--p-bg-primary-0900);
+}
+
+.node__content {
+  // --card_img-layerf-bgc: var(--p-bg-primary-0900);
+}
+
+.headline {
+  display: flex;
+  column-gap: u.rem(10);
+}
+
+.headline__intext {
+  flex-grow: 1;
+}
+
+.argbody_placeholder {
+  user-select: none;
+  
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: u.rem(24);
+  color: var(--p-text-primary-0600);
+}

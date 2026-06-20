@@ -1,0 +1,80 @@
+@use "@/u" as u;
+
+.root {
+  display: flex;
+  gap: u.rem(15);
+  flex-direction: column;
+
+  padding: u.rem(20);
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0900);
+  box-shadow: 0 0 20px 5px var(--p-bg-primary-1300);
+}
+
+.field {
+  display: flex;
+  gap: u.rem(7);
+  flex-direction: column;
+}
+
+.label {
+  font-size: u.rem(15);
+  color: var(--p-text-primary-1000);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.head__title {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  margin:0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.head__email {
+  margin: 0;
+  
+  font-size: u.rem(18);
+}
+
+.head__left {
+  display: flex;
+  gap: u.rem(8);
+  align-items: center;
+}
+
+.line_changepass {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem(15);
+}
+
+.line_changepass__head {
+  display: grid;
+  gap: u.rem(15);
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    --card_img-headln_action-fontsize: #{u.rem(14)};
+  }
+}
+
+.line_changepass__newpass {
+  display: grid;
+  gap: u.rem(15);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+  }
+}

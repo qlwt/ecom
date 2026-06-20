@@ -1,0 +1,18 @@
+@use "@/u" as u;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  gap: u.rem(20);
+  padding: u.rem(40) 0;
+  flex-direction: column;
+}
+
+.pendingpanel {
+  position: relative;
+  height: u.rem(400);
+}

@@ -1,0 +1,9 @@
+@use "@/u" as u;
+
+.root {
+  padding: u.rem(15);
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0800);
+  box-shadow: 0 0 u.rem(7) 0px var(--p-bg-primary-1700);
+}

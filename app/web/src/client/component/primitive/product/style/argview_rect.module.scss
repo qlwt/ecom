@@ -1,0 +1,15 @@
+@use "@/u" as u;
+
+.root {
+  flex-grow: 1;
+  flex-shrink:0;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+
+  font-size: u.rem(14);
+
+  --in_slider-thumb-width: #{u.rem(10)};
+  --in_slider-thumb-height: #{u.rem(14)};
+}

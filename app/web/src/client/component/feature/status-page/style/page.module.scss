@@ -1,0 +1,30 @@
+@use "@/u" as u;
+
+.root {
+  flex-grow: 1;
+
+  display: flex;
+  gap: u.rem(20);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+  padding: u.rem(20) 35vw;
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    padding: u.rem(20) 10vw;
+  }
+}
+
+.code {
+  margin: 0;
+  font-weight: 700;
+  font-size: u.rem(38);
+}
+
+.message {
+  margin: 0;
+  font-weight: 500;
+  font-size: u.rem(38);
+}

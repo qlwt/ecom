@@ -1,0 +1,83 @@
+@use "@/u" as u;
+
+.root {}
+
+.maincol {
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.argcol {
+  flex-grow: 4;
+  flex-shrink: 1;
+  flex-basis: 0;
+  min-width: 0;
+
+  contain: size;
+  overflow-y: auto;
+
+  background-color: var(--p-bg-primary-1000);
+  box-shadow: inset 10px 0 10px -10px var(--p-bg-primary-1500);
+
+  display: grid;
+  gap: u.rem(10);
+  padding: u.rem(10);
+
+  grid-auto-flow: row;
+  grid-auto-rows: min-content;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.argcol__item {
+  --card_img-layerf-bgc: var(--p-bg-primary-0800);
+
+  user-select: none;
+  aspect-ratio: 1;
+}
+
+.argcol__bool,
+.argcol__rect,
+.argcol__int {
+  display: flex;
+  gap: u.rem(5);
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+  font-size: u.rem(16);
+}
+
+.info_topleft {
+  position: absolute;
+  top: u.rem(5);
+  left: u.rem(5);
+
+  display: flex;
+}
+
+.info_bottom {
+  position: absolute;
+  bottom: u.rem(5);
+  left: u.rem(5);
+  right: u.rem(5);
+
+  display: flex;
+}
+
+.info__box {
+  padding: u.rem(10) u.rem(20);
+  background-color: var(--p-bg-primary-1000);
+
+  border-radius: 4px;
+  border: 1px solid var(--p-border-primary-0400);
+  box-shadow: 0 0 u.rem(5) u.rem(0) var(--p-border-primary-0400);
+
+  &._name {
+    flex-grow: 1;
+    text-align: center;
+  }
+}

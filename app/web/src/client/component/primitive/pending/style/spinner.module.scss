@@ -1,0 +1,82 @@
+@use "@/u" as u;
+
+@keyframes spin {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes spin_inline {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner, .spinner_icon {
+  &._palette_blue {
+    border-top-color: #1487ff;
+    border-left-color: #b0cbed;
+    border-right-color: #b0cbed;
+    border-bottom-color: #b0cbed;
+  }
+
+  &._palette_green {
+    border-top-color: #0ddc11;
+    border-left-color: #78e37a;
+    border-right-color: #78e37a;
+    border-bottom-color: #78e37a;
+  }
+}
+
+.spinner {
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  border-radius: 50%;
+  border-style: solid;
+
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  &.spinner_small {
+    padding: u.rem(8);
+    border-width: u.rem(3);
+  }
+
+  &.spinner_normal {
+    padding: u.rem(15);
+    border-width: u.rem(5);
+  }
+
+  &.spinner_big {
+    padding: u.rem(25);
+    border-width: u.rem(5);
+  }
+}
+
+.spinner_icon {
+  display: inline-block;
+
+  padding: 0.4em;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.2em;
+
+  animation-duration: 1s;
+  animation-name: spin_inline;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

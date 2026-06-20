@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "paths": {
+            "@/*": [
+                "./*"
+            ],
+            "@src/*": [
+                "./src/*"
+            ],
+            "@client/*": [
+                "./src/client/*"
+            ]
+        }
+    },
+
+    "include": [
+        "script/**/*",
+        "src/**/*"
+    ]
+}

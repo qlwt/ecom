@@ -1,0 +1,19 @@
+@use "@/u" as u;
+
+.cartbtn {
+  &._active {
+    --card_img-headln_action-bgc: var(--p-bg-s_green-1000);
+    --card_img-headln_action_hover-bgc: var(--p-bg-s_green-1200);
+    --card_img-headln_action_active-bgc: var(--p-bg-s_green-1300);
+  }
+}
+
+.headln {
+  justify-content: flex-end;
+}
+
+.headln__btn {
+  // @media screen and (max-width: u.$scwidth_sm) {
+  //   flex-grow: 1;
+  // }
+}

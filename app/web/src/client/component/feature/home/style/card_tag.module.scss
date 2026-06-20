@@ -1,0 +1,56 @@
+@use "@/u" as u;
+
+.root {
+  cursor: pointer;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  outline: none;
+
+  overflow: hidden;
+  font-size: u.rem(18);
+  text-overflow: ellipsis;
+
+  padding: u.rem(8) u.rem(65);
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+
+  transition: background-color u.$trtime_fast, color u.$trtime_fast, border u.$trtime_fast;
+
+  &:not(._selected) {
+    color: var(--p-text-primary-0600);
+    background-color: var(--p-bg-primary-1100);
+    border-color: var(--p-border-primary-0500);
+
+    &:hover, &:focus {
+      color: var(--p-text-primary-1000);
+      background-color: var(--p-bg-primary-1000);
+      border-color: var(--p-border-primary-0700);
+    }
+
+    &:active {
+      color: var(--p-text-primary-1300);
+      background-color: var(--p-bg-primary-1000);
+      border-color: var(--p-border-primary-0700);
+    }
+  }
+
+  &._selected {
+    color: var(--p-text-s_blue-1000);
+    border-color: var(--p-bg-s_blue-1000);
+    background-color: var(--p-bg-s_blue-1000);
+
+    &:hover, &:focus {
+      border-color: var(--p-bg-s_blue-1200);
+      background-color: var(--p-bg-s_blue-1200);
+    }
+
+    &:active {
+      border-color: var(--p-bg-s_blue-1300);
+      background-color: var(--p-bg-s_blue-1300);
+    }
+  }
+}

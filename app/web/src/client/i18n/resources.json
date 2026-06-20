@@ -1,0 +1,772 @@
+{
+    "en": {
+        "translation": {
+            "popups": {
+                "info": {
+                    "contact_default": "We have revieved your message",
+                    "commision_patch_default": "Your order is successfully updated",
+                    "contact_patch_default": "Your message is successfully updated",
+                    "contact_info_default": "Your information is successfully updated",
+                    "auth_changepass_default": "Your password is successfully updated"
+                },
+
+                "error": {
+                    "track_notfound": "No order was found: wrong id",
+                    "track_default": "Failed to find an order: something went wrong, try again later",
+
+                    "signin_forbiden": "Failed to signin: wrong email or password",
+                    "signin_default": "Failed to signin: something went wrong, try again later",
+
+                    "signup_emailtaken": "Failed to signup: email is taken",
+                    "signup_default": "Failed to signup: something went wrong, try again later",
+
+                    "contact_default": "Failed to send a message: something went wrong, try again later",
+
+                    "account_delete_default": "Failed to signup: something went wrong, try again later",
+
+                    "auth_changepass_forbiden": "Failed to change password: wrong old password specified",
+                    "auth_changepass_default": "Failed to change password: something went wrong, try again later",
+
+                    "contact_info_default": "Failed to update your information: something went wrong, try again later",
+
+                    "contact_patch_default": "Failed to update your message: something went wrong, try again later",
+
+                    "commision_patch_default": "Failed to update your order: something went wrong, try again later",
+                    "commision_backtocart_default": "Failed to return items back to the cart: something went wrong, try again later",
+
+                    "add_to_the_cart_default": "Failed to add item to the cart: something went wrong, try again later",
+                    "add_to_the_cart_nomaterials": "Failed to add item to the cart: materials for product {{product_name}} are not selected",
+
+                    "cloneitem_default": "Failed to clone the item: something went wrong, try again later"
+                }
+            },
+
+            "pingme": {
+                "question_1": "Have a question? Ask right now.",
+                "msg_hello": "Give us your phone number and we will call you back.",
+                "msg_failinternal": "Something went wrong. Try again later.",
+                "msg_success": "We have recieved your phone, we will call you as soon as possible."
+            },
+
+            "commons": {
+                "edit": "Edit",
+                "save": "Save",
+                "submit": "Submit",
+                "cancel": "Cancel",
+                "discard": "Discard",
+                "noname": "No Name",
+                "explore": "See More",
+                "in_the_cart": "In the Cart",
+                "add_to_the_cart": "Add to Cart",
+                "change_password": "Change Password",
+                "contact_info": "Contac Information",
+
+                "delivery_address": "Delivery Address",
+
+                "email": "Email",
+                "placeholder_email": "your.email@gmail.com",
+                "placeholder_email_empty": "No Email Provided",
+
+                "phone": "Mobile Phone",
+                "placeholder_phone_ua": "(000) 000 00 00",
+                "placeholder_phone_empty": "No Phone Provided",
+
+                "oblast": "Region",
+                "placeholder_oblast": "Your Region",
+                "placeholder_oblast_empty": "No Region Provided",
+                "placeholder_oblast_select": "Select your Region",
+
+                "city": "City",
+                "placeholder_city": "Your City",
+                "placeholder_city_empty": "No City Provided",
+                "placeholder_city_select": "Select your City",
+
+                "delivery_terminal": "Delivery Terminal",
+                "placeholder_delivery_terminal": "Delivery Terminal",
+                "placeholder_delivery_terminal_select": "Select Delivery Terminal",
+                "placeholder_delivery_terminal_empty": "No Delivery Terminal Provided",
+
+                "familyname": "Family Name",
+                "placeholder_familyname": "Your Family Name",
+                "placeholder_familyname_empty": "No Family Name Provided",
+
+                "firstname": "First Name",
+                "placeholder_firstname": "Your Name",
+                "placeholder_firstname_empty": "No Name Provided",
+
+                "patronym": "Patronym",
+                "placeholder_patronym": "Your Patronym",
+                "placeholder_patronym_empty": "No Patronym Provided"
+            },
+
+            "errorpage": {
+                "notfound": {
+                    "message": "Could not find a page under current url."
+                }
+            },
+
+            "currency": {
+                "uah": "UAH"
+            },
+
+            "nav": {
+                "home": "Home",
+                "console": "Console",
+                "contact": "Contact",
+                "tracker": "Track Order",
+
+                "console_home": "General",
+                "console_contacts": "Contacts",
+                "console_commisions": "Orders",
+
+                "user_logout": "Log Out",
+                "user_profile": "Profile",
+
+                "cart_finishorder": "Finish the Order"
+            },
+
+            "item": {
+                "header_chose_base_variant": "Chose Base Variant",
+                "customise": "Customise",
+                "placeholder_variant_name": "Enter Variant Name",
+                "placeholder_variant_desc": "Enter Variant Description",
+
+                "undiscovered_products_one": "{{count}} More Product",
+                "undiscovered_products_other": "{{count}} More Products",
+
+                "create_variant": "Create Variant",
+                "make_custom_variant": "Make Custom",
+
+                "variant_notsel": "No variant selected",
+                "variant_empty": "Package is empty. You can add more Products",
+
+                "modal.you_can_make_custom_variant": "You can create custom variant",
+
+                "placeholder_name": "Enter Item Name"
+            },
+
+            "tmplmt": {
+                "placeholder_name": "Enter Material Template Name"
+            },
+
+            "tmplit": {
+                "placeholder_name": "Enter Item Template Name"
+            },
+
+            "tmplpr": {
+                "noparams": "No Customisations Available",
+                "placeholder_price": "Product Price Fromula",
+                "placeholder_name": "Enter Product Template Name",
+                "placeholder_arg_name": "Argument Name",
+                "placeholder_title_falsy": "Falsy Title",
+                "placeholder_title_truish": "Truish Title",
+                "placeholder_formula_hidden": "When should an Argument be Hidden",
+                "viewmode_param": "Parameter",
+                "viewmode_formulahidden": "Formula Hidden"
+            },
+
+            "sign": {
+                "act_signin": "Sign In Instead",
+                "act_signup": "Create Account",
+
+                "act_continue": "Continue",
+                "act_send_code": "Send Code",
+
+                "header_signin": "Sign In",
+                "header_signup": "Create Account",
+                "header_restore_password": "Restore Password",
+
+                "link_forgot_password": "Forgot Password?",
+
+                "label_restorecode": "Restoration Code",
+
+                "label_password": "Password",
+                "placeholder_password": "Create Password",
+
+                "label_new_password": "New Password",
+                "placeholder_new_password": "Create new Password",
+
+                "label_repeat_password": "Repeat Password",
+                "placeholder_repeat_password": "Repeat your Password"
+            },
+
+            "contact": {
+                "label_status_reviewed": "Reviewed",
+                "label_status_not_reviewed": "Not yet Reviewed",
+
+                "label_topic": "Topic",
+                "placeholder_topic": "Topic of your message",
+                "placeholder_topic_empty": "No Topic Provided",
+
+                "label_content": "Message",
+                "placeholder_content": "Your message to us",
+                "placeholder_content_empty": "No Message Provided"
+            },
+
+            "console_list": {
+                "placeholder_nodekind": "Category",
+
+                "nodekind_item": "Item",
+                "nodekind_material": "Material",
+                "nodekind_tmplit": "Item Template",
+                "nodekind_tmplpr": "Product Template",
+                "nodekind_tmplmt": "Material Template"
+            },
+
+            "commision": {
+                "label_identifier": "Identifier",
+                "label_status_paid": "Paid",
+                "label_status_not_paid": "Not Paid",
+                "label_status_delivered": "Delivered",
+                "label_status_not_delivered": "Not Delivered",
+
+                "alert_nomaterials_view_1": "For some items in your cart, materials are no longer available.",
+                "alert_nomaterials_view_2": "For that reason you can not finish the order.",
+                "alert_nomaterials_view_3": "Try to go back to the cart and exclude unavailable items.",
+                "alert_nomaterials_cart_1": "For some items in your cart, materials are no longer available.",
+                "alert_nomaterials_cart_2": "They will be excluded from your order if you proceede.",
+
+                "create_commision": "Place the Order",
+                "back_to_cart": "Copy Items to the Cart",
+                "continue_to_payments": "Proceede to Payments"
+            },
+
+            "user": {
+                "link_info": "Account Info",
+                "link_contacts": "My Contacts",
+                "link_commisions": "My Orders",
+
+                "header_emailauth": "Auth By Email",
+                "header_googleauth": "Auth By Google",
+
+                "act_deleteacc": "Delete Account",
+                "act_changepass": "Change Password",
+
+                "label_oldpass": "Old Password",
+                "placeholder_oldpass": "Enter Old Password",
+
+                "label_newpass": "New Password",
+                "placeholder_newpass": "Enter New Password",
+
+                "label_repeatpass": "Repeat Password",
+                "placeholder_repeatpass": "Repeat Password",
+
+                "modal_delete_account_desc_1": "Your Data will be permanently lost.",
+                "modal_delete_account_desc_2": "To confirm account deletion - fill in the provided code: "
+            },
+
+            "cloneitem": {
+                "label_item_name": "Item Name",
+                "label_materials": "Materials",
+                "label_variants": "Variants",
+                
+                "placeholder_item_name": "Item Name",
+                "placeholder_variant_header": "Variant Header",
+                "placeholder_variant_description": "Variant Description",
+
+                "variant_notselected": "Variant is not selected"
+            },
+
+            "time": {
+                "ago": "ago",
+
+                "second_one": "{{count}} second",
+                "second_other": "{{count}} seconds",
+
+                "minute_one": "{{count}} minute",
+                "minute_other": "{{count}} minutes",
+
+                "hour_one": "{{count}} hour",
+                "hour_other": "{{count}} hours",
+
+                "day_one": "{{count}} day",
+                "day_other": "{{count}} days",
+
+                "month_one": "{{count}} month",
+                "month_other": "{{count}} months",
+
+                "year_one": "{{count}} year",
+                "year_other": "{{count}} years",
+
+                "longtime": "long time"
+            }
+        }
+    },
+
+    "ru": {
+        "translation": {
+            "popups": {
+                "info": {
+                    "contact_default": "Мы получили ваше сообщение",
+                    "commision_patch_default": "Ваш заказ успешно обновлен",
+                    "contact_patch_default": "Ваше сообщение успешно обновлено",
+                    "contact_info_default": "Ваша информация успешно обновлена",
+                    "auth_changepass_default": "Ваш пароль успешно обновлен"
+                },
+                "error": {
+                    "track_notfound": "Заказ не найден: неверный ID",
+                    "track_default": "Не удалось найти заказ: что-то пошло не так, попробуйте позже",
+                    "signin_forbiden": "Ошибка входа: неверный email или пароль",
+                    "signin_default": "Не удалось войти: что-то пошло не так, попробуйте позже",
+                    "signup_emailtaken": "Ошибка регистрации: этот email уже занят",
+                    "signup_default": "Не удалось зарегистрироваться: что-то пошло не так, попробуйте позже",
+                    "contact_default": "Не удалось отправить сообщение: что-то пошло не так, попробуйте позже",
+                    "account_delete_default": "Не удалось удалить аккаунт: что-то пошло не так, попробуйте позже",
+                    "auth_changepass_forbiden": "Не удалось изменить пароль: указан неверный пароль",
+                    "auth_changepass_default": "Не удалось изменить пароль: что-то пошло не так, попробуйте позже",
+                    "contact_info_default": "Не удалось обновить информацию: что-то пошло не так, попробуйте позже",
+                    "contact_patch_default": "Не удалось обновить сообщение: что-то пошло не так, попробуйте позже",
+                    "commision_patch_default": "Не удалось обновить заказ: что-то пошло не так, попробуйте позже",
+                    "commision_backtocart_default": "Не удалось вернуть товары обратно в корзину: что-то пошло не так, попробуйте позже",
+                    "add_to_the_cart_default": "Не удалось добавить предметы в корзину: что-то пошло не так, попробуйте позже",
+                    "add_to_the_cart_nomaterials": "Не удалось добавить предметы в корзину: для продукта {{product_name}} не выбраны материалы",
+                    "cloneitem_default": "Не удалось копировать товар: что-то пошло не так, попробуйте позже"
+                }
+            },
+            "pingme": {
+                "question_1": "Есть вопрос? Мы готовы ответить.",
+                "msg_hello": "Сообщите нам свой номер телефона и мы свяжемся с вами.",
+                "msg_failinternal": "Что-то пошло не так. Попробуйте снова.",
+                "msg_success": "Мы получили ваш номер телефона. Мы свяжемся скоро свяжемся с вами."
+            },
+            "commons": {
+                "edit": "Редактировать",
+                "save": "Сохранить",
+                "submit": "Отправить",
+                "cancel": "Отмена",
+                "discard": "Сбросить",
+                "noname": "Без имени",
+                "explore": "Подробнее",
+                "in_the_cart": "В корзине",
+                "add_to_the_cart": "В корзину",
+                "change_password": "Изменить пароль",
+                "contact_info": "Контактная информация",
+                "delivery_address": "Адрес доставки",
+                "email": "Email",
+                "placeholder_email": "your.email@gmail.com",
+                "placeholder_email_empty": "Email не указан",
+                "phone": "Мобильный телефон",
+                "placeholder_phone_ua": "(000) 000 00 00",
+                "placeholder_phone_empty": "Телефон не указан",
+                "oblast": "Область",
+                "placeholder_oblast": "Ваша область",
+                "placeholder_oblast_empty": "Область не указана",
+                "placeholder_oblast_select": "Выберите область",
+                "city": "Город",
+                "placeholder_city": "Ваш город",
+                "placeholder_city_empty": "Город не указан",
+                "placeholder_city_select": "Выберите город",
+                "delivery_terminal": "Отделение доставки",
+                "placeholder_delivery_terminal": "Отделение доставки",
+                "placeholder_delivery_terminal_select": "Выберите отделение доставки",
+                "placeholder_delivery_terminal_empty": "Отделение не указано",
+                "familyname": "Фамилия",
+                "placeholder_familyname": "Ваша фамилия",
+                "placeholder_familyname_empty": "Фамилия не указана",
+                "firstname": "Имя",
+                "placeholder_firstname": "Ваше имя",
+                "placeholder_firstname_empty": "Имя не указано",
+                "patronym": "Отчество",
+                "placeholder_patronym": "Ваше отчество",
+                "placeholder_patronym_empty": "Отчество не указано"
+            },
+            "errorpage": {
+                "notfound": {
+                    "message": "Не удалось найти страницы по этому адресу."
+                }
+            },
+            "currency": {
+                "uah": "грн"
+            },
+            "nav": {
+                "home": "Главная",
+                "console": "Консоль",
+                "contact": "Контакты",
+                "tracker": "Отследить заказ",
+                "console_home": "Общие",
+                "console_contacts": "Контакты",
+                "console_commisions": "Заказы",
+                "user_logout": "Выйти",
+                "user_profile": "Профиль",
+                "cart_finishorder": "Оформить заказ"
+            },
+            "item": {
+                "header_chose_base_variant": "Выберите Базовый Набор",
+                "customise": "Свой Набор",
+                "placeholder_variant_name": "Введите название варианта",
+                "placeholder_variant_desc": "Введите описание варианта",
+                "create_variant": "Создать набор",
+                "undiscovered_products_one": "Ещё {{count}} Изделие",
+                "undiscovered_products_few": "Ещё {{count}} Изделия",
+                "undiscovered_products_many": "Ещё {{count}} Изделий",
+                "make_custom_variant": "Свой Набор",
+                "variant_notsel": "Набор не выбран",
+                "variant_empty": "Набор пуст. Вы можете добавить товары",
+                "modal.you_can_make_custom_variant": "Вы можете создать свой набор",
+                "placeholder_name": "Введите название товара"
+            },
+            "tmplmt": {
+                "placeholder_name": "Введите название шаблона материала"
+            },
+            "tmplit": {
+                "placeholder_name": "Введите название шаблона товара"
+            },
+            "tmplpr": {
+                "noparams": "Нет доступных настроек",
+                "placeholder_price": "Формула цены продукта",
+                "placeholder_name": "Введите название шаблона продукта",
+                "placeholder_arg_name": "Название Параметра",
+                "placeholder_title_falsy": "Название когда отключено",
+                "placeholder_title_truish": "Название когда включено",
+                "placeholder_formula_hidden": "Когда параметр должен быть скрыт",
+                "viewmode_param": "Параметр",
+                "viewmode_formulahidden": "Формула Спрятан"
+            },
+            "sign": {
+                "act_signin": "Войти в аккаунт",
+                "act_signup": "Создать аккаунт",
+                "act_continue": "Продолжить",
+                "act_send_code": "Отправить код",
+                "header_signin": "Вход",
+                "header_signup": "Регистрация",
+                "header_restore_password": "Восстановление пароля",
+                "link_forgot_password": "Забыли пароль?",
+                "label_restorecode": "Код восстановления",
+                "label_password": "Пароль",
+                "placeholder_password": "Придумайте пароль",
+                "label_new_password": "Новый пароль",
+                "placeholder_new_password": "Придумайте новый пароль",
+                "label_repeat_password": "Повторите пароль",
+                "placeholder_repeat_password": "Введите пароль еще раз"
+            },
+            "contact": {
+                "label_status_reviewed": "Прочитано",
+                "label_status_not_reviewed": "Еще не Прочитано",
+                "label_topic": "Тема",
+                "placeholder_topic": "Тема вашего сообщения",
+                "placeholder_topic_empty": "Тема не указана",
+                "label_content": "Сообщение",
+                "placeholder_content": "Ваше сообщение нам",
+                "placeholder_content_empty": "Текст сообщения отсутствует"
+            },
+            "console_list": {
+                "placeholder_nodekind": "Категория",
+                "nodekind_item": "Товар",
+                "nodekind_material": "Материал",
+                "nodekind_tmplit": "Шаблон товара",
+                "nodekind_tmplpr": "Шаблон продукта",
+                "nodekind_tmplmt": "Шаблон материала"
+            },
+            "commision": {
+                "label_identifier": "Идентификатор",
+                "label_status_paid": "Оплачено",
+                "label_status_not_paid": "Не оплачено",
+                "label_status_delivered": "Доставлено",
+                "label_status_not_delivered": "Не доставлено",
+
+                "alert_nomaterials_view_1": "У нас закончились материалы необходимые для некоторых товаров из вашего списка.",
+                "alert_nomaterials_view_2": "Из-за этого вы не можете оплатить заказ.",
+                "alert_nomaterials_view_3": "Попробуйте вернуться в корзину и исключить товары, для которых закончились материалы.",
+                "alert_nomaterials_cart_1": "У нас закончились материалы необходимые для некоторых товаров из вашего списка.",
+                "alert_nomaterials_cart_2": "Если вы продолжите, то они будут исключены из заказа.",
+
+                "create_commision": "Разместить заказ",
+                "continue_to_payments": "Сформировать заказ",
+                "back_to_cart": "Вернуть товары в корзину"
+            },
+            "user": {
+                "link_info": "Данные аккаунта",
+                "link_contacts": "Мои контакты",
+                "link_commisions": "Мои заказы",
+                "header_emailauth": "Привязка к Email",
+                "header_googleauth": "Привязка к Google",
+                "act_deleteacc": "Удалить Аккаунт",
+                "act_changepass": "Изменить пароль",
+                "label_oldpass": "Старый пароль",
+                "placeholder_oldpass": "Введите старый пароль",
+                "label_newpass": "Новый пароль",
+                "placeholder_newpass": "Введите новый пароль",
+                "label_repeatpass": "Повторите пароль",
+                "placeholder_repeatpass": "Повторите пароль",
+                "modal_delete_account_desc_1": "Ваши данные будут безвозвратно удалены.",
+                "modal_delete_account_desc_2": "Для подтверждения удаления аккаунта введите код: "
+            },
+
+            "cloneitem": {
+                "label_item_name": "Название Товара",
+                "label_materials": "Материалы",
+                "label_variants": "Наборы",
+                
+                "placeholder_item_name": "Название Товара",
+                "placeholder_variant_header": "Заголовок Набора",
+                "placeholder_variant_description": "Описание Набора",
+
+                "variant_notselected": "Набор не выбран"
+            },
+
+            "time": {
+                "ago": "назад",
+
+                "second_one": "{{count}} секунду",
+                "second_few": "{{count}} секунды",
+                "second_many": "{{count}} секунд",
+
+                "minute_one": "{{count}} минуту",
+                "minute_few": "{{count}} минуты",
+                "minute_many": "{{count}} минут",
+
+                "hour_one": "{{count}} час",
+                "hour_few": "{{count}} часа",
+                "hour_many": "{{count}} часов",
+
+                "day_one": "{{count}} день",
+                "day_few": "{{count}} дня",
+                "day_many": "{{count}} дней",
+
+                "month_one": "{{count}} месяц",
+                "month_few": "{{count}} месяца",
+                "month_many": "{{count}} месяцев",
+
+                "year_one": "{{count}} год",
+                "year_few": "{{count}} года",
+                "year_many": "{{count}} лет",
+
+                "longtime": "давно"
+            }
+        }
+    },
+
+    "uk": {
+        "translation": {
+            "popups": {
+                "info": {
+                    "contact_default": "Ми отримали ваше повідомлення",
+                    "commision_patch_default": "Ваше замовлення успішно оновлено",
+                    "contact_patch_default": "Ваше повідомлення успішно оновлено",
+                    "contact_info_default": "Ваша інформація успішно оновлена",
+                    "auth_changepass_default": "Ваш пароль успішно оновлено"
+                },
+                "error": {
+                    "track_notfound": "Замовлення не знайдено: невірний ID",
+                    "track_default": "Не вдалося знайти замовлення: щось пішло не так, спробуйте пізніше",
+                    "signin_forbiden": "Помилка входу: невірний email або пароль",
+                    "signin_default": "Не вдалося увійти: щось пішло не так, спробуйте пізніше",
+                    "signup_emailtaken": "Помилка реєстрації: цей email уже зайнятий",
+                    "signup_default": "Не вдалося зареєструватися: щось пішло не так, спробуйте пізніше",
+                    "contact_default": "Не вдалося надіслати повідомлення: щось пішло не так, спробуйте пізніше",
+                    "account_delete_default": "Не вдалося видалити акаунт: щось пішло не так, спробуйте пізніше",
+                    "auth_changepass_forbiden": "Не вдалося змінити пароль: вказано невірний пароль",
+                    "auth_changepass_default": "Не вдалося змінити пароль: щось пішло не так, спробуйте пізніше",
+                    "contact_info_default": "Не вдалося оновити інформацію: щось пішло не так, спробуйте пізніше",
+                    "contact_patch_default": "Не вдалося оновити повідомлення: щось пішло не так, спробуйте пізніше",
+                    "commision_backtocart_default": "Не вдалося повернути товары у корзину: щось пішло не так, спробуйте пізніше",
+                    "commision_patch_default": "Не вдалося оновити замовлення: щось пішло не так, спробуйте пізніше",
+                    "add_to_the_cart_default": "Не вдалося додати предмету у корзину: щось пішло не так, спробуйте пізніше",
+                    "add_to_the_cart_nomaterials": "Не вдалося додати предмету у корзину: для продукта {{product_name}} не обрані матерiали",
+                    "cloneitem_default": "Не вдалося скопіювати товар: щось пішло не так, спробуйте пізніше"
+                }
+            },
+            "pingme": {
+                "question_1": "Є питання? Ми готові відповісти.",
+                "msg_hello": "Надайте нам свій номер телефона і ми зв'яжемося з вами",
+                "msg_failinternal": "Щось пішло не так, спробуйте пізніше.",
+                "msg_success": "Ми отримали ваш номер телефона та скоро св'яжемося з вами."
+            },
+            "commons": {
+                "edit": "Редагувати",
+                "save": "Зберегти",
+                "submit": "Надіслати",
+                "cancel": "Скасувати",
+                "discard": "Скинути",
+                "noname": "Без імені",
+                "explore": "Детальніше",
+                "in_the_cart": "У кошику",
+                "add_to_the_cart": "У кошик",
+                "change_password": "Змінити пароль",
+                "contact_info": "Контактна інформація",
+                "delivery_address": "Адреса доставки",
+                "email": "Email",
+                "placeholder_email": "your.email@gmail.com",
+                "placeholder_email_empty": "Email не вказано",
+                "phone": "Мобільний телефон",
+                "placeholder_phone_ua": "(000) 000 00 00",
+                "placeholder_phone_empty": "Телефон не вказано",
+                "oblast": "Область",
+                "placeholder_oblast": "Ваша область",
+                "placeholder_oblast_empty": "Область не вказана",
+                "placeholder_oblast_select": "Оберіть область",
+                "city": "Місто",
+                "placeholder_city": "Ваше місто",
+                "placeholder_city_empty": "Місто не вказано",
+                "placeholder_city_select": "Оберіть місто",
+                "delivery_terminal": "Відділення доставки",
+                "placeholder_delivery_terminal": "Відділення доставки",
+                "placeholder_delivery_terminal_select": "Оберіть відділення доставки",
+                "placeholder_delivery_terminal_empty": "Відділення не вказано",
+                "familyname": "Прізвище",
+                "placeholder_familyname": "Ваше прізвище",
+                "placeholder_familyname_empty": "Прізвище не вказано",
+                "firstname": "Ім'я",
+                "placeholder_firstname": "Ваше ім'я",
+                "placeholder_firstname_empty": "Ім'я не вказано",
+                "patronym": "Iм'я по батькові",
+                "placeholder_patronym": "Ваше iм'я по батькові",
+                "placeholder_patronym_empty": "Iм'я по батькові не вказано"
+            },
+            "errorpage": {
+                "notfound": {
+                    "message": "Не вдалося знайти сторінку за даною адресою."
+                }
+            },
+            "currency": {
+                "uah": "грн"
+            },
+            "nav": {
+                "home": "Головна",
+                "console": "Консоль",
+                "contact": "Контакти",
+                "tracker": "Відстежити замовлення",
+                "console_home": "Загальні",
+                "console_contacts": "Контакти",
+                "console_commisions": "Замовлення",
+                "user_logout": "Вийти",
+                "user_profile": "Профіль",
+                "cart_finishorder": "Оформити замовлення"
+            },
+            "item": {
+                "header_chose_base_variant": "Оберіть базовий набір",
+                "customise": "Власний набір",
+                "placeholder_variant_name": "Введіть назву варіанта",
+                "placeholder_variant_desc": "Введіть опис варіанта",
+                "create_variant": "Створити набір",
+                "undiscovered_products_one": "Щё {{count}} Виріб",
+                "undiscovered_products_few": "Щё {{count}} Вироби",
+                "undiscovered_products_many": "Щё {{count}} Виробів",
+                "make_custom_variant": "Власний набір",
+                "variant_notsel": "Набір не обрано",
+                "variant_empty": "Набір порожній. Ви можете додати товари",
+                "modal.you_can_make_custom_variant": "Ви можете створити свій набір",
+                "placeholder_name": "Введіть назву товару"
+            },
+            "tmplmt": {
+                "placeholder_name": "Введіть назву шаблону матеріалу"
+            },
+            "tmplit": {
+                "placeholder_name": "Введіть назву шаблону товару"
+            },
+            "tmplpr": {
+                "noparams": "Немає доступних налаштувань",
+                "placeholder_price": "Формула ціни продукту",
+                "placeholder_name": "Введіть назву шаблону продукту",
+                "placeholder_arg_name": "Назва Параметра",
+                "placeholder_title_falsy": "Назва коли вiдключено",
+                "placeholder_title_truish": "Назва когда включено",
+                "placeholder_formula_hidden": "Коли параметр має бути схован",
+                "viewmode_param": "Параметр",
+                "viewmode_formulahidden": "Формула Схован"
+            },
+            "sign": {
+                "act_signin": "Увійти в акаунт",
+                "act_signup": "Створити акаунт",
+                "act_continue": "Продовжити",
+                "act_send_code": "Надіслати код",
+                "header_signin": "Вхід",
+                "header_signup": "Реєстрація",
+                "header_restore_password": "Відновлення пароля",
+                "link_forgot_password": "Забули пароль?",
+                "label_restorecode": "Код відновлення",
+                "label_password": "Пароль",
+                "placeholder_password": "Придумайте пароль",
+                "label_new_password": "Новий пароль",
+                "placeholder_new_password": "Придумайте новий пароль",
+                "label_repeat_password": "Повторіть пароль",
+                "placeholder_repeat_password": "Введіть пароль ще раз"
+            },
+            "contact": {
+                "label_status_reviewed": "Прочитано",
+                "label_status_not_reviewed": "Ще не прочитано",
+                "label_topic": "Тема",
+                "placeholder_topic": "Тема вашого повідомлення",
+                "placeholder_topic_empty": "Тема не вказана",
+                "label_content": "Повідомлення",
+                "placeholder_content": "Ваше повідомлення нам",
+                "placeholder_content_empty": "Текст повідомлення відсутній"
+            },
+            "console_list": {
+                "placeholder_nodekind": "Категорія",
+                "nodekind_item": "Товар",
+                "nodekind_material": "Матеріал",
+                "nodekind_tmplit": "Шаблон товару",
+                "nodekind_tmplpr": "Шаблон продукту",
+                "nodekind_tmplmt": "Шаблон матеріалу"
+            },
+            "commision": {
+                "label_identifier": "Ідентифікатор",
+                "label_status_paid": "Оплачено",
+                "label_status_not_paid": "Не оплачено",
+                "label_status_delivered": "Доставлено",
+                "label_status_not_delivered": "Не доставлено",
+
+                "alert_nomaterials_view_1": "У нас закiнчились матерiали необхідні для деяких товарiв з вашoго списку.",
+                "alert_nomaterials_view_2": "Через це ви не можете зробити замовлення.",
+                "alert_nomaterials_view_3": "Спробуйте повернутися до корзини й виключити товари, для яких закiнчилися матерiали.",
+                "alert_nomaterials_cart_1": "У нас закiнчились матерiали необхідні для деяких товарiв з вашoго списку.",
+                "alert_nomaterials_cart_2": "Якщо ви продовжите, то вони будуть виключені із вашого замовлення.",
+
+                "create_commision": "Розмістити замовлення",
+                "back_to_cart": "Повернути товары у корзину",
+                "continue_to_payments": "Сформувати замовлення"
+            },
+            "user": {
+                "link_info": "Дані акаунта",
+                "link_contacts": "Мої контакти",
+                "link_commisions": "Мої замовлення",
+                "header_emailauth": "Прив'язка до Email",
+                "header_googleauth": "Прив'язка до Google",
+                "act_deleteacc": "Видалити акаунт",
+                "act_changepass": "Змінити пароль",
+                "label_oldpass": "Старий пароль",
+                "placeholder_oldpass": "Введіть старий пароль",
+                "label_newpass": "Новий пароль",
+                "placeholder_newpass": "Введіть новий пароль",
+                "label_repeatpass": "Повторіть пароль",
+                "placeholder_repeatpass": "Повторіть пароль",
+                "modal_delete_account_desc_1": "Ваші дані будуть видалені.",
+                "modal_delete_account_desc_2": "Для підтвердження видалення акаунта введіть код: "
+            },
+            "cloneitem": {
+                "label_item_name": "Назва Товара",
+                "label_materials": "Матеріали",
+                "label_variants": "Набори",
+                
+                "placeholder_item_name": "Назва Товару",
+                "placeholder_variant_header": "Заголовок Набору",
+                "placeholder_variant_description": "Опис Набору",
+
+                "variant_notselected": "Набiр не обран"
+            },
+            "time": {
+                "ago": "тому",
+                "second_one": "{{count}} секунду",
+                "second_few": "{{count}} секунди",
+                "second_many": "{{count}} секунд",
+                "minute_one": "{{count}} хвилину",
+                "minute_few": "{{count}} хвилини",
+                "minute_many": "{{count}} хвилин",
+                "hour_one": "{{count}} годину",
+                "hour_few": "{{count}} години",
+                "hour_many": "{{count}} годин",
+                "day_one": "{{count}} день",
+                "day_few": "{{count}} дні",
+                "day_many": "{{count}} днів",
+                "month_one": "{{count}} місяць",
+                "month_few": "{{count}} місяці",
+                "month_many": "{{count}} місяців",
+                "year_one": "{{count}} рік",
+                "year_few": "{{count}} роки",
+                "year_many": "{{count}} років",
+                "longtime": "давно"
+            }
+        }
+    }
+}

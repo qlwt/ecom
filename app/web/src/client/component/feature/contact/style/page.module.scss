@@ -1,0 +1,32 @@
+@use "@/u" as u;
+
+.page {
+  padding: 40px u.rem(80);
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 5vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    padding: 40px 5vw;
+  }
+}
+
+.sector {
+  padding: u.rem(20);
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0900);
+  box-shadow: 0 0 20px 5px var(--p-bg-primary-1300);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem(20);
+}
+
+.line_submit {
+  display: flex;
+  justify-content: flex-end;
+}

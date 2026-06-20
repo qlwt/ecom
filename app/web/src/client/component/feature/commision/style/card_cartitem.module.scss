@@ -1,0 +1,235 @@
+@use "@/u" as u;
+
+.root {
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: u.rem(15);
+  padding: u.rem(15);
+  border-radius: 4px;
+  background-color: var(--p-bg-primary-0800);
+  box-shadow: 0 0 u.rem(4) u.rem(2) var(--p-border-primary-0400);
+
+  &::before {
+    content: "";
+
+    user-select: none;
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: u.$z_priority;
+
+    background-color: transparent;
+
+    transition: background-color u.$trtime_fast;
+  }
+
+  &._disabled {
+    &::before {
+      background-color: rgba(0, 0, 0, .08);
+    }
+  }
+
+  &:hover,
+  &._disabled {
+    box-shadow: 0 0 u.rem(10) u.rem(2) var(--p-border-primary-0400);
+  }
+}
+
+.head {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: u.rem(220);
+
+  display: grid;
+  gap: u.rem(15);
+
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, 1fr);
+  grid-template-areas:
+    "preview info    acts   ";
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+
+    grid-template-areas:
+      "preview info   "
+      "preview acts   ";
+  }
+}
+
+.head__preview {
+  grid-area: preview;
+
+  aspect-ratio: 1;
+  height: 100%;
+}
+
+.head__info {
+  grid-area: info;
+}
+
+.head__info__line {
+  display: flex;
+  gap: u.rem(10);
+  align-items: center;
+}
+
+.head__acts {
+  grid-area: acts;
+  justify-self: flex-end;
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    align-self: flex-end;
+  }
+}
+
+.head__acts__line {
+  display: flex;
+  gap: u.rem(15);
+  align-items: center;
+  overflow: hidden;
+}
+
+.head__title {
+  margin: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.head__variant {
+  font-size: u.rem(18);
+  color: var(--p-text-s_blue-1000);
+  background-color: var(--p-bg-s_blue-1000);
+
+  border-radius: 4px;
+  padding: u.rem(6) u.rem(20);
+}
+
+.head__act {
+  --action_btn-padding_hor: #{u.rem(10)};
+  --action_btn-padding_ver: #{u.rem(8)};
+}
+
+.head__price {
+  font-weight: 500;
+  font-size: u.rem(18);
+  white-space: nowrap;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+
+  border-radius: 4px;
+  border: 2px solid var(--p-border-primary-0500);
+  background-color: var(--p-bg-primary-0900);
+
+  transition: border-color u.$trtime_fast;
+
+  &:not(._placeholder) {
+    &:hover {
+      border-color: var(--p-border-primary-0900);
+    }
+
+    &:active,
+    &:focus-within {
+      border-color: var(--p-border-primary-1600);
+    }
+  }
+}
+
+.quantity__view {
+  width: u.rem(50);
+  padding: u.rem(5) 0;
+
+  text-align: center;
+  font-size: u.rem(14);
+  line-height: u.rem(18);
+  color: var(--p-text-primary-1300);
+}
+
+.quantity__input {
+  outline: none;
+  border: none;
+
+  width: u.rem(50);
+  padding: u.rem(5) 0;
+
+  text-align: center;
+  font-size: u.rem(14);
+  line-height: u.rem(18);
+  color: var(--p-text-primary-1300);
+
+  background-color: transparent;
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover {
+    background-color: var(--p-bg-primary-1000);
+  }
+
+  &:focus {
+    background-color: var(--p-bg-primary-1100);
+  }
+}
+
+.quantity__btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  width: u.rem(28);
+
+  text-align: center;
+  font-size: u.rem(18);
+  font-weight: 400;
+  color: var(--p-text-primary-1300);
+
+  background-color: transparent;
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover {
+    background-color: var(--p-bg-primary-1000);
+  }
+
+  &:focus {
+    background-color: var(--p-bg-primary-1100);
+  }
+
+  &._border_left {
+    border-left: 1px solid var(--p-border-primary-0500);
+  }
+
+  &._border_right {
+    border-right: 1px solid var(--p-border-primary-0500);
+  }
+}
+
+.grid {
+  display: grid;
+  gap: u.rem(20);
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, u.rem(600));
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-columns: 1fr;
+  }
+}

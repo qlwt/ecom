@@ -1,0 +1,84 @@
+@use "@/u" as u;
+
+.root {
+  display: flex;
+  gap: u.rem(15);
+  flex-direction: column;
+
+  padding: u.rem(20);
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0900);
+  box-shadow: 0 0 20px 5px var(--p-bg-primary-1300);
+}
+
+.field {
+  display: flex;
+  gap: u.rem(7);
+  flex-direction: column;
+}
+
+.label {
+  font-size: u.rem(15);
+  color: var(--p-text-primary-1000);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head__title {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  margin:0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.line_names {
+  display: grid;
+  gap: u.rem(15);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.line_divisions {
+  display: grid;
+  gap: u.rem(10);
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  grid-template-areas:
+    "region   city    "
+    "terminal terminal";
+
+  &> :nth-child(1) {
+    grid-area: region;
+  }
+
+  &> :nth-child(2) {
+    grid-area: city;
+  }
+
+  &> :nth-child(3) {
+    grid-area: terminal;
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+      "region  "
+      "city    "
+      "terminal";
+  }
+}

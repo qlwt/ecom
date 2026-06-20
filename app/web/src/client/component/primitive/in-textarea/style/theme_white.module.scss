@@ -1,0 +1,33 @@
+@use "@/u" as u;
+
+.view {
+  --border-0: var(--p-border-primary-0500);
+  --border-1: var(--p-border-primary-0900);
+  --border-2: var(--p-border-primary-1600);
+
+  --color-0: var(--p-text-primary-0600);
+  --color-1: var(--p-text-primary-1000);
+  --color-2: var(--p-text-primary-1600);
+
+  color: var(--color-2);
+  border: 2px solid var(--border-0);
+
+  transition: border-color u.$trtime_fast;
+
+  &:hover {
+    border-color: var(--border-1);
+  }
+
+  &:focus-within {
+    border-color: var(--border-2);
+  }
+
+  &._error {
+    border-color: var(--c-delete);
+  }
+
+  &._disabled {
+    cursor: not-allowed;
+    background-color: var(--p-bg-primary-1200);
+  }
+}

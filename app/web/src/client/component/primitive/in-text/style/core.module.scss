@@ -1,0 +1,66 @@
+@use "@/u" as u;
+
+.intext {
+  display: flex;
+  justify-content: space-between;
+
+  overflow: hidden;
+  border-radius: 4px;
+
+  &._disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(._disabled) {
+    cursor: pointer;
+  }
+}
+
+.intext__block_comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: u.rem(10);
+
+  font-size: u.rem(16);
+}
+
+.intext__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: u.rem(10);
+
+  font-size: u.rem(18);
+}
+
+.intext__icon_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:not(._disabled):not(._pending) {
+    cursor: pointer;
+  }
+}
+
+.intext__input {
+  border: none;
+  outline: none;
+
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 1;
+  min-width: 0;
+
+  font-size: u.rem(16);
+  letter-spacing: 0.5px;
+
+  padding: u.rem(10);
+
+  &._disabled {
+    cursor: inherit;
+  }
+}

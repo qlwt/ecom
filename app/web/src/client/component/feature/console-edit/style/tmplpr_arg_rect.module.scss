@@ -1,0 +1,24 @@
+@use "@/u" as u;
+
+.root {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider__container {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.head {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,24 @@
+@use "@/u" as u;
+
+$padding: u.rem(25);
+
+.arg {
+  z-index: 0;
+  aspect-ratio: 1;
+  position: relative;
+
+  padding: #{$padding};
+}
+
+.arg__view {
+}
+
+.arg__name {
+  position: absolute;
+
+  top: #{$padding};
+  right: #{$padding};
+
+  font-size: u.rem(14);
+  color: var(--p-text-primary-0600);
+}

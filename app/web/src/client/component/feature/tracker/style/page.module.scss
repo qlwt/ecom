@@ -1,0 +1,41 @@
+@use "@/u" as u;
+
+.page {
+  padding: 40px u.rem(160);
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 10vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    padding: 40px 10vw;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  z-index: u.$z_header;
+  position: sticky;
+  left: 0;
+  top: 80px;
+
+  padding: 15px;
+  border-radius: 4px;
+
+  background-color: var(--p-bg-primary-0800);
+  box-shadow: 0 0 7px 0px var(--p-bg-primary-1700);
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 10px;
+  }
+}
+
+.intext {
+  flex-grow: 1;
+}

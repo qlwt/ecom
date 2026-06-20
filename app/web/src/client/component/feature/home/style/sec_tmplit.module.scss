@@ -1,0 +1,32 @@
+@use "@/u" as u;
+
+.root {
+  display: grid;
+  grid-template-rows: u.rem(200);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: u.rem(20);
+  padding: u.rem(10) 0;
+
+  @media screen and (max-width: u.$scwidth_l) {
+    grid-template-rows: u.rem(280);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xxm) {
+    grid-template-rows: u.rem(230);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,42 @@
+@use "@/u" as u;
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  column-gap: u.rem(40);
+  padding: 40px u.rem(80);
+
+  & > :nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  & > :nth-child(2) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 5vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    row-gap: u.rem(40);
+    padding: 40px 5vw;
+
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+
+    & > :nth-child(1) {
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    & > :nth-child(2) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+}

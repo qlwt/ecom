@@ -1,0 +1,37 @@
+@use "@/u" as u;
+
+.root {
+  display: grid;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: space-between;
+  // grid-auto-rows: 135px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  // grid-template-columns: repeat(auto-fill, 140px);
+
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  overflow-y: auto;
+}
+
+.card {
+  --card_img-layout_info-padding_ver: #{u.rem(7)};
+  --card_img-layout_info-padding_hor: #{u.rem(10)};
+
+  aspect-ratio: 1;
+}
+
+.card_post {
+  aspect-ratio: 1;
+  flex-grow: 1;
+}
+
+.ddn__content {
+  width: 40vw;
+  height: 50vh;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}

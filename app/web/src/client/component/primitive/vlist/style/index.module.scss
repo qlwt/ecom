@@ -1,0 +1,16 @@
+.view {
+  overflow-y: auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.placeholder {
+  flex: 0 0;
+  display: block;
+}
+
+.pending {
+  flex: 0 0;
+  display: block;
+  position: relative;
+}

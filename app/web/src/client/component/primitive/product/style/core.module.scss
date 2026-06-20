@@ -1,0 +1,184 @@
+@use "@/u" as u;
+@use "sass:math" as m;
+
+$line__padding: 16;
+$head__img__size: 156;
+$head__info__size: 34;
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 4px;
+  border: 2px solid var(--p-border-primary-0500);
+  background-color: var(--p-bg-primary-0600);
+}
+
+.line {
+  padding-top: u.rem(m.div($line__padding, 2));
+  padding-bottom: u.rem(m.div($line__padding, 2));
+  padding-left: u.rem($line__padding);
+  padding-right: u.rem($line__padding);
+
+  &:first-child {
+    padding-top: u.rem($line__padding);
+  }
+
+  &:last-child {
+    padding-bottom: u.rem($line__padding);
+  }
+
+  &._argsbool {
+    display: flex;
+    gap: u.rem(10);
+    flex-wrap: wrap;
+  }
+}
+
+.whitespace {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.head {
+  display: grid;
+
+  grid-template-areas:
+    "preview title     acts     "
+    "preview materials materials";
+
+  grid-template-columns: u.rem($head__img__size + $line__padding) minmax(0, 1fr) auto;
+  grid-template-rows: u.rem($head__info__size + $line__padding) u.rem($head__img__size - $head__info__size + $line__padding);
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    grid-template-areas:
+      "preview   preview  "
+      "preview   preview  "
+      "title     acts     "
+      "materials materials";
+
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+.head__preview {
+  grid-area: preview;
+
+  display: flex;
+
+  border-radius: 4px;
+
+  padding: u.rem($line__padding) u.rem(0) u.rem($line__padding) u.rem($line__padding);
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    padding: u.rem($line__padding) u.rem($line__padding) u.rem(m.div($line__padding, 2));
+  }
+}
+
+.head__preview__img {
+  aspect-ratio: 1;
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    aspect-ratio: 1.5;
+  }
+}
+
+.head__title {
+  grid-area: title;
+  display: flex;
+  padding: u.rem($line__padding) u.rem(m.div($line__padding, 2)) 0 u.rem($line__padding);
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    align-self: center;
+
+    padding: #{u.rem(m.div($line__padding, 2))} #{u.rem(m.div($line__padding, 2))} u.rem(0) u.rem($line__padding);
+  }
+}
+
+.head__title__text {
+  font-weight: 600;
+  font-size: u.rem(18);
+  color: var(--p-text-primary-1300);
+
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.head__acts {
+  --action_btn-padding_hor: #{u.rem(8)};
+
+  grid-area: acts;
+
+  display: flex;
+  gap: u.rem(10);
+  padding: u.rem($line__padding) u.rem($line__padding) u.rem(0) u.rem(m.div($line__padding, 2));
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    align-self: center;
+
+    padding: u.rem($line__padding) u.rem($line__padding) u.rem(0) u.rem(m.div($line__padding, 2));
+  }
+}
+
+.head__quantity {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  display: flex;
+}
+
+.head__materials {
+  grid-area: materials;
+
+  display: grid;
+  column-gap: u.rem(10);
+  grid-auto-flow: column;
+  padding: u.rem($line__padding);
+  grid-auto-columns: u.rem($head__img__size - $head__info__size - $line__padding);
+  grid-template-rows: u.rem($head__img__size - $head__info__size - $line__padding);
+
+  overflow-y: auto;
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    padding: u.rem(15) u.rem(15) u.rem(15);
+  }
+}
+
+.info__material {}
+
+.argview {
+  flex-shrink: 0;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+.argnav {
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: u.rem(10);
+
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.argview__placeholder {
+  width: 100%;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.argview__placeholder__text {
+  margin: 0;
+  font-size: u.rem(24);
+  color: var(--p-text-primary-0600);
+}

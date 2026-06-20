@@ -1,0 +1,60 @@
+@use "@/u" as u;
+
+.root {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  user-select: none;
+  outline: none;
+
+  border-radius: 4px;
+  white-space: nowrap;
+  padding: u.rem(8) u.rem(14);
+  border: 1px solid var(--p-border-primary-0400);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: u.rem(5);
+
+  font-size: u.rem(15);
+
+  background-color: var(--p-bg-primary-0900);
+
+  transition: background-color u.$trtime_fast, border-color u.$trtime_fast, color u.$trtime_fast;
+
+  &:not(._active) {
+    cursor: pointer;
+
+    &:hover, &:focus-within {
+      background-color: var(--p-bg-primary-1100);
+    }
+
+    &:active {
+      background-color: var(--p-bg-primary-1300);
+    }
+  }
+
+  &._active {
+    color: var(--p-text-s_blue-1000);
+    border-color: var(--p-bg-s_blue-1000);
+    background-color: var(--p-bg-s_blue-1000);
+  }
+}
+
+.merged {
+  display: inline-grid;
+}
+
+.merged__item {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  &._hidden {
+    user-select: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

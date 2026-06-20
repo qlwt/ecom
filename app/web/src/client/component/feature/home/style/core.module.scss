@@ -1,0 +1,13 @@
+@use "@/u" as u;
+
+.page {
+  padding: 40px u.rem(80);
+
+  @media screen and (max-width: u.$scwidth_m) {
+    padding: 40px 5vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    padding: 40px 5vw;
+  }
+}

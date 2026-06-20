@@ -1,0 +1,30 @@
+@use "@/u" as u;
+
+.root {
+  display: grid;
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-content: space-between;
+  grid-auto-rows: u.rem(670);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @media screen and (min-width: u.$scwidth_l) {
+    grid-template-columns: repeat(auto-fill, u.rem(500));
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.node {
+  --card_img-layerf-bgc: var(--p-bg-primary-1100);
+}
+
+.node__content {
+  --card_img-layerf-bgc: var(--p-bg-primary-0900);
+}

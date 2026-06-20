@@ -1,0 +1,45 @@
+@use "@/u" as u;
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: u.rem(600);
+  grid-template-columns: repeat(auto-fill, u.rem(1000));
+
+  gap: u.rem(20);
+  padding: u.rem(10) 0;
+
+  @media screen and (max-width: u.$scwidth_xxl) {
+    grid-template-rows: u.rem(600);
+    grid-template-columns: repeat(auto-fill, u.rem(1000));
+  }
+
+  @media screen and (max-width: u.$scwidth_l) {
+    grid-template-rows: u.rem(520);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xxm) {
+    grid-template-rows: u.rem(400);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    grid-template-rows: u.rem(600);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-rows: u.rem(500);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    grid-template-rows: u.rem(400);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

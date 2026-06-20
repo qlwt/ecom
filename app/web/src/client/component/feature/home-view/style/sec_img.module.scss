@@ -1,0 +1,60 @@
+@use "@/u" as u;
+
+.root {
+  display: grid;
+  gap: u.rem(20);
+  grid-template-columns: u.rem(240) 1fr;
+
+  grid-template-areas:
+    "nav  view"
+  ;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto u.rem(120);
+
+    grid-template-areas:
+      "view"
+      "nav "
+    ;
+  }
+}
+
+.cardview {
+  aspect-ratio: 1.6;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    aspect-ratio: 1.2;
+
+    .sec_nav & {
+      height: 100%;
+    }
+  }
+}
+
+.sec_nav {
+  grid-area: nav;
+
+  contain: size;
+
+  display: grid;
+  overflow: auto;
+  gap: u.rem(20);
+  grid-auto-flow: row;
+  grid-template-columns: minmax(0, 1fr);
+
+  scrollbar-width: thin;
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    contain: initial;
+
+    grid-auto-flow: column;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: unset;
+    grid-auto-columns: auto;
+  }
+}
+
+.sec_view {
+  grid-area: view;
+}

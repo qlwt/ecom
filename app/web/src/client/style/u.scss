@@ -1,0 +1,27 @@
+@use "sass:math" as math;
+
+@function rem($px) {
+  @return math.div($px, 16)+rem;
+}
+
+$scwidth_xxl: 3840px;
+$scwidth_xl: 2048px;
+$scwidth_l: 1920px;
+$scwidth_xxm: 1600px;
+$scwidth_xm: 1536px;
+$scwidth_m: 1440px;
+$scwidth_sm: 1024px;
+$scwidth_xsm: 768px;
+$scwidth_xxsm: 480px;
+
+$z_normal: 0;
+$z_priority: 1;
+$z_header: 2;
+$z_dropdown: 3;
+$z_modal: 10;
+$z_overmodal: 15;
+$z_modalroot: 50;
+$z_dropdownroot: 100;
+
+$trtime_sfast: 0.15s;
+$trtime_fast: 0.25s;

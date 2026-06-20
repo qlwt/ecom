@@ -1,0 +1,12 @@
+@use "@/u" as u;
+
+.field {
+  display: flex;
+  gap: u.rem(7);
+  flex-direction: column;
+}
+
+.label {
+  font-size: u.rem(14);
+  color: var(--p-text-primary-1000);
+}

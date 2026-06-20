@@ -1,0 +1,30 @@
+@use "@/u" as u;
+
+.list {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.option {
+  display: flex;
+  align-items: flex-end;
+  gap: u.rem(8);
+
+  overflow: hidden;
+}
+
+.name {
+  font-size: u.rem(16);
+  color: var(--p-text-primary-1000);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comment {
+  font-size: u.rem(14);
+  color: var(--p-text-primary-0600);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

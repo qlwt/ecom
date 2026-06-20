@@ -1,0 +1,139 @@
+@use "@/u" as u;
+
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: u.rem(20);
+}
+
+.acts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.act_delete {
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+  font-size: u.rem(18);
+  color: var(--p-text-s_red-1000);
+
+  border-radius: 4px;
+  padding: u.rem(10) u.rem(30);
+  background-color: var(--p-bg-s_red-1000);
+
+  transition: background-color u.$trtime_fast;
+
+  &:hover, &:focus {
+    background-color: var(--p-bg-s_red-1200);
+  }
+
+  &:active {
+    background-color: var(--p-bg-s_red-1300);
+  }
+}
+
+.modal {
+  border-radius: 4px;
+  padding: u.rem(20);
+  background-color: var(--p-bg-primary-1000);
+
+  width: 40vw;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    width: 60vw;
+  }
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    width: 80vw;
+  }
+}
+
+.modal__form {
+  display: flex;
+  gap: u.rem(10);
+  flex-direction: column;
+}
+
+.modal__form__title {
+  margin: 0;
+  font-size: u.rem(26);
+
+  &._red { 
+    color: var(--p-text_error-primary-1000);
+  }
+}
+
+.modal__form__description {
+  font-size: u.rem(18);
+}
+
+.modal__form__acts {
+  display: flex;
+  gap: u.rem(10);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.modal__form__act {
+  border: none;
+  outline: none;
+
+  border-radius: 4px;
+  font-size: u.rem(18);
+  padding: u.rem(10) u.rem(25);
+
+  transition: background-color u.$trtime_fast, color u.$trtime_fast;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &._blue {
+    color: var(--p-text-s_blue-1000);
+
+    &:not(:disabled) {
+      background-color: var(--p-bg-s_blue-1000);
+
+      &:hover, &:focus {
+        background-color: var(--p-bg-s_blue-1200);
+      }
+
+      &:active {
+        background-color: var(--p-bg-s_blue-1300);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--p-bg-s_blue-0400);
+    }
+  }
+
+  &._red {
+    color: var(--p-text-s_red-1000);
+
+    &:not(:disabled) {
+      background-color: var(--p-bg-s_red-1000);
+
+      &:hover, &:focus {
+        background-color: var(--p-bg-s_red-1200);
+      }
+
+      &:active {
+        background-color: var(--p-bg-s_red-1300);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--p-bg-s_red-0400);
+    }
+  }
+}

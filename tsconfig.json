@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "target": "es2022",
+        "module": "es2022",
+        "moduleResolution": "bundler",
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+        "allowUnusedLabels": true,
+        "noImplicitOverride": true,
+        "noUnusedParameters": false,
+        "verbatimModuleSyntax": true,
+        "allowUnreachableCode": true,
+        "noUncheckedIndexedAccess": true,
+        "allowSyntheticDefaultImports": true
+    }
+}

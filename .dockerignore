@@ -1,0 +1,17 @@
+**/node_modules
+**/bun.lock
+**/yarn.lock
+**/pnpm-lock.yaml
+**/package-lock.json
+
+**/*.env
+
+**/build
+./.config/
+./app/api/storage
+./app/mobile-push
+
+.git
+.gitignore
+compose.yaml
+**/Dockerfile

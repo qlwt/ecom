@@ -1,0 +1,666 @@
+@use "@/u" as u;
+
+$sqcords_thumb__color__def: var(--p-border-primary-1000);
+$sqcords_mark__color__def: rgb(0, 240, 0);
+$line__gap__def: u.rem(5);
+$line__padding__def: u.rem(10);
+$track__height__def: u.rem(8);
+$track__bg__def: var(--p-bg-s_blue-1200);
+$track_hover__bg__def: var(--p-bg-s_blue-1500);
+$track_active__bg__def: var(--p-bg-s_blue-1700);
+$trackfill__bg__def: var(--p-bg-primary-1200);
+$trackfill_hover__bg__def: var(--p-bg-primary-1400);
+$trackfill_active__bg__def: var(--p-bg-primary-1600);
+$thumb__height__def: u.rem(20);
+$thumb__width__def: u.rem(12);
+$thumb__bg__def: var(--p-bg-s_blue-1400);
+$thumb_hover__bg__def: var(--p-bg-s_blue-1600);
+$thumb_active__bg__def: var(--p-bg-s_blue-1800);
+$mark__bg__def: rgb(0, 240, 0);
+$mark_hover__bg__def: rgb(0, 220, 0);
+$mark_active__bg__def: rgb(0, 200, 0);
+
+$sqcords_thumb__color: var(--in_slider-sqcords-color, #{$sqcords_thumb__color__def});
+$sqcords_mark__color: var(--in_slider-sqcords-color, #{$sqcords_mark__color__def});
+$line__gap: var(--in_slider-line-gap, #{$line__gap__def});
+$line__padding: var(--in_slider-line-padding, #{$line__padding__def});
+$track__height: var(--in_slider-track-height, #{$track__height__def});
+$track__bg: var(--in_slider-track-bg, #{$track__bg__def});
+$track_hover__bg: var(--in_slider-track_hover-bg, #{$track_hover__bg__def});
+$track_active__bg: var(--in_slider-track_active-bg, #{$track_active__bg__def});
+$trackfill__bg: var(--in_slider-trackfill-bg, #{$trackfill__bg__def});
+$trackfill_hover__bg: var(--in_slider-trackfill_hover-bg, #{$trackfill_hover__bg__def});
+$trackfill_active__bg: var(--in_slider-trackfill_active-bg, #{$trackfill_active__bg__def});
+$thumb__height: var(--in_slider-thumb-height, #{$thumb__height__def});
+$thumb__width: var(--in_slider-thumb-width, #{$thumb__width__def});
+$thumb__bg: var(--in_slider-thumb-bg, #{$thumb__bg__def});
+$thumb_hover__bg: var(--in_slider-thumb_hover-bg, #{$thumb_hover__bg__def});
+$thumb_active__bg: var(--in_slider-thumb_active-bg, #{$thumb_active__bg__def});
+$mark__bg: var(--in_slider-mark-bg, #{$mark__bg__def});
+$mark_hover__bg: var(--in_slider-mark_hover-bg, #{$mark_hover__bg__def});
+$mark_active__bg: var(--in_slider-mark_active-bg, #{$mark_active__bg__def});
+
+.body_drag {
+  cursor: grabbing;
+}
+
+@mixin underline($prefix) {
+  position: absolute;
+
+  #{$prefix}._horizontal:not(._reverse) & {
+    top: 100%;
+    transform: translateX(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._horizontal._reverse & {
+    top: 100%;
+    transform: translateX(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._vertical:not(._reverse) &,
+  ._sideways:not(._reverse) & {
+    right: 100%;
+    transform: translateY(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._vertical._reverse &,
+  #{$prefix}._sideways._reverse & {
+    right: 100%;
+    transform: translateY(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+}
+
+@mixin underline_shift($prefix) {
+  position: absolute;
+
+  #{$prefix}._horizontal:not(._reverse) & {
+    top: 100%;
+    transform: translateX(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5))) translateY(100%);
+  }
+
+  #{$prefix}._horizontal._reverse & {
+    top: 100%;
+    transform: translateX(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5))) translateY(100%);
+  }
+
+  #{$prefix}._vertical:not(._reverse) &,
+  #{$prefix}._sideways:not(._reverse) & {
+    right: 100%;
+    transform: translateY(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5))) translateX(-100%);
+  }
+
+  #{$prefix}._vertical._reverse &,
+  #{$prefix}._sideways._reverse & {
+    right: 100%;
+    transform: translateY(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5))) translateX(-100%);
+  }
+}
+
+@mixin overline($prefix) {
+  position: absolute;
+
+  #{$prefix}._horizontal:not(._reverse) & {
+    bottom: 100%;
+    transform: translateX(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._horizontal._reverse & {
+    bottom: 100%;
+    transform: translateX(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._vertical:not(._reverse) &,
+  #{$prefix}._sideways:not(._reverse) & {
+    left: 100%;
+    transform: translateY(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+
+  #{$prefix}._vertical._reverse &,
+  #{$prefix}._sideways._reverse & {
+    left: 100%;
+    transform: translateY(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5)));
+  }
+}
+
+@mixin overline_shift($prefix) {
+  position: absolute;
+
+  #{$prefix}._horizontal:not(._reverse) & {
+    bottom: 100%;
+    transform: translateX(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5))) translateY(-100%);
+  }
+
+  #{$prefix}._horizontal._reverse & {
+    bottom: 100%;
+    transform: translateX(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5))) translateY(-100%);
+  }
+
+  #{$prefix}._vertical:not(._reverse) &,
+  #{$prefix}._sideways:not(._reverse) & {
+    left: 100%;
+    transform: translateY(calc(-50% + #{$thumb__width} / 2 - #{$thumb__width} * var(--progress-arythm, 0.5))) translateX(+100%);
+  }
+
+  #{$prefix}._vertical._reverse &,
+  #{$prefix}._sideways._reverse & {
+    left: 100%;
+    transform: translateY(calc(50% - #{$thumb__width} / 2 + #{$thumb__width} * var(--progress-arythm, 0.5))) translateX(+100%);
+  }
+}
+
+.underline {
+  @include underline(":not(._swaplabels)");
+  @include overline("._swaplabels");
+}
+
+.underline_shift {
+  @include underline_shift(":not(._swaplabels)");
+  @include overline_shift("._swaplabels");
+}
+
+.overline {
+  @include overline(":not(._swaplabels)");
+  @include underline("._swaplabels");
+}
+
+.overline_shift {
+  @include overline_shift(":not(._swaplabels)");
+  @include underline_shift("._swaplabels")
+}
+
+.editinput {
+  text-align: center;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0px;
+  border: none;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0px;
+  }
+
+  ._vertical & {
+    writing-mode: vertical-lr;
+  }
+
+  ._sideways & {
+    writing-mode: sideways-lr;
+  }
+
+  &[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+
+    ._vertical &,
+    ._sideways & {
+      height: u.rem(32);
+    }
+
+    ._horizontal & {
+      width: u.rem(32);
+    }
+  }
+
+  &[type="text"] {
+
+    ._vertical &,
+    ._sideways & {
+      height: u.rem(64);
+    }
+
+    ._horizontal & {
+      width: u.rem(64);
+    }
+  }
+}
+
+.merge {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+}
+
+.merge__item {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 1;
+  grid-column-start: 1;
+
+  &._hidden {
+    user-select: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.line {
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  display: flex;
+  position: relative;
+}
+
+.view {
+  user-select: none;
+}
+
+.line__track__view {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  display: flex;
+
+  body:not(.body_drag) & {
+    cursor: grab;
+  }
+
+  ._horizontal & {
+    padding-top: #{$line__padding};
+    padding-bottom: #{$line__padding};
+  }
+
+  ._vertical &,
+  ._sideways & {
+    padding-right: #{$line__padding};
+    padding-left: #{$line__padding};
+  }
+}
+
+.line__track {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  border-radius: 4px;
+  background-color: #{$track__bg};
+
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#{$trackfill__bg}, #{$trackfill__bg});
+  transition: background-color u.$trtime_fast, background-image u.$trtime_fast;
+
+  ._drag &,
+  &._drag {
+    background-color: #{$track_active__bg};
+    // background-image: linear-gradient(#{$trackfill_active__bg}, #{$trackfill_active__bg});
+  }
+
+  .line:hover &,
+  .line:focus-within &,
+  .bound__view:hover+* &,
+  .bound__view:hover+.bound__view+* &,
+  .bound__view:focus-within+* &,
+  .bound__view:focus-within+.bound__view+* & {
+    background-color: #{$track_hover__bg};
+    // background-image: linear-gradient(#{$trackfill_hover__bg}, #{$trackfill_hover__bg});
+  }
+
+  ._horizontal & {
+    height: #{$track__height};
+  }
+
+  ._horizontal:not(._reverse) & {
+    background-position: right;
+  }
+
+  ._horizontal._reverse & {
+    background-position: left;
+  }
+
+  ._vertical &,
+  ._sideways & {
+    width: #{$track__height};
+  }
+
+  ._vertical:not(._reverse) &,
+  ._sideways:not(._reverse) & {
+    background-position: bottom;
+  }
+
+  ._vertical._reverse &,
+  ._sideways._reverse & {
+    background-position: top;
+  }
+}
+
+.line__thumb,
+.line__mark {
+  position: absolute;
+
+  border-radius: 4px;
+  transition: background-color u.$trtime_fast;
+
+  ._horizontal & {
+    width: #{$thumb__width};
+    height: #{$thumb__height};
+  }
+
+  ._horizontal:not(._reverse) & {
+    top: 50%;
+    transform: translateX(calc(-1 * var(--progress, 50%))) translateY(-50%);
+  }
+
+  ._horizontal._reverse & {
+    top: 50%;
+    transform: translateX(var(--progress, 50%)) translateY(-50%);
+  }
+
+  ._vertical &,
+  ._sideways & {
+    width: #{$thumb__height};
+    height: #{$thumb__width};
+  }
+
+  ._vertical:not(._reverse) &,
+  ._sideways:not(._reverse) & {
+    left: 50%;
+    transform: translateY(calc(-1 * var(--progress, 50%))) translateX(-50%);
+  }
+
+  ._vertical._reverse &,
+  ._sideways._reverse & {
+    left: 50%;
+    transform: translateY(var(--progress, 50%)) translateX(-50%);
+  }
+}
+
+.line__mark {
+  background-color: #{$mark__bg};
+
+  ._drag &,
+  &._drag {
+    background-color: #{$mark_active__bg};
+  }
+
+  body:not(.body_drag) & {
+    cursor: pointer;
+  }
+
+  .line:hover &,
+  .line:focus-within &,
+  .bound__view:hover+* &,
+  .bound__view:hover+.bound__view+* &,
+  .bound__view:focus-within+* &,
+  .bound__view:focus-within+.bound__view+* & {
+    background-color: #{$mark_hover__bg};
+  }
+}
+
+.line__thumb {
+  background-color: #{$thumb__bg};
+
+  ._drag &,
+  &._drag {
+    background-color: #{$thumb_active__bg};
+  }
+
+  body:not(.body_drag) & {
+    cursor: grab;
+  }
+
+  .line:hover &,
+  .line:focus-within &,
+  .bound__view:hover+* &,
+  .bound__view:hover+.bound__view+* &,
+  .bound__view:focus-within+* &,
+  .bound__view:focus-within+.bound__view+* & {
+    background-color: #{$thumb_hover__bg};
+  }
+}
+
+.line__label {
+  cursor: unset;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  body:not(.body_drag) & {
+    cursor: pointer;
+  }
+
+  ._vertical & {
+    writing-mode: vertical-lr;
+  }
+
+  ._sideways & {
+    writing-mode: sideways-lr;
+  }
+}
+
+.bound {
+  cursor: unset;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ._vertical &,
+  &._vertical {
+    writing-mode: vertical-lr;
+  }
+
+  ._sideways &,
+  &._sideways {
+    writing-mode: sideways-lr;
+  }
+
+  body:not(.body_drag) & {
+    cursor: pointer;
+  }
+}
+
+.view_line {
+  display: flex;
+  align-items: center;
+  row-gap: #{$line__gap};
+  column-gap: #{$line__gap};
+
+  &._horizontal {
+    flex-direction: row;
+
+    &._reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &._vertical,
+  &._sideways {
+    flex-direction: column;
+
+    &._reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.view_line__bound_min {
+  order: 1;
+}
+
+.view_line__bound_max {
+  order: 3;
+}
+
+.view_line__line {
+  order: 2;
+}
+
+.view_sq {
+  position: relative;
+  flex-grow: 1;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  row-gap: #{$line__gap};
+  column-gap: #{$line__gap};
+
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
+}
+
+.view_sq__bound_hormin {
+  grid-area: 3 / 1 / 4 / 2;
+  z-index: 1;
+}
+
+.view_sq__bound_hormax {
+  grid-area: 3 / 4 / 4 / 5;
+  z-index: 1;
+}
+
+.view_sq__horline {
+  z-index: 1;
+
+  display: flex;
+
+  width: 100%;
+  grid-area: 3 / 2 / 4 / 4;
+  padding-left: #{$line__padding};
+}
+
+.view_sq__bound_vermin {
+  grid-area: 4 / 2 / 5 / 3;
+  z-index: 1;
+}
+
+.view_sq__bound_vermax {
+  grid-area: 1 / 2 / 2 / 3;
+  z-index: 1;
+}
+
+.view_sq__verline {
+  z-index: 1;
+
+  display: flex;
+
+  height: 100%;
+  grid-area: 2 / 2 / 4 / 3;
+  padding-bottom: #{$line__padding};
+}
+
+.view_sq__square {
+  z-index: 0;
+
+  position: absolute;
+
+  transform: translateX(calc(-1 * (#{$line__gap} + #{$line__padding}))) translateY(calc(#{$line__gap} + #{$line__padding}));
+}
+
+.view_sq__coords__view {
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+
+  display: flex;
+
+  width: 100%;
+  height: 100%;
+  grid-area: 2 / 2 / 4 / 4;
+  padding-left: #{$line__padding};
+  padding-bottom: #{$line__padding};
+}
+
+.view_sq__coords__screen {
+  flex-grow: 1;
+
+  position: relative;
+}
+
+.view_sq__coords__square {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  width: calc(var(--x-progress, 50%) + #{$thumb__width} / 2 - #{$thumb__width} * var(--x-progress-arythm, 0.5) + 1px);
+  height: calc(var(--y-progress, 50%) + #{$thumb__width} / 2 - #{$thumb__width} * var(--y-progress-arythm, 0.5) + 1px);
+}
+
+.view_sq__coords__lines {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+
+  border-style: dashed;
+  border-top-width: 2px;
+  border-right-width: 2px;
+
+  ._thumb & {
+    z-index: 1;
+    border-color: #{$sqcords_thumb__color};
+  }
+
+  ._mark & {
+    z-index: 0;
+    border-color: #{$sqcords_mark__color};
+  }
+}
+
+.view_sq__coords__label {
+  pointer-events: auto;
+
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  transform-origin: left bottom;
+  transform: translateX(u.rem(10)) translateY(-50%) ;
+}
+
+.view_sq__coords__labeltext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  body:not(._body_drag) & {
+    cursor: pointer;
+  }
+}
+
+.view_sq__coords__point {
+  pointer-events: auto;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: u.rem(12);
+  height: u.rem(12);
+  border-radius: 50%;
+
+  transform: translateX(calc(50% - 1px)) translateY(calc(-50% + 1px));
+
+  body:not(.body_drag) & {
+    cursor: pointer;
+  }
+
+  ._thumb & {
+    z-index: 1;
+    background-color: #{$thumb__bg};
+  }
+
+  ._mark & {
+    z-index: 0;
+    background-color: #{$mark__bg};
+  }
+}

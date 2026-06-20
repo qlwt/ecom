@@ -1,0 +1,5 @@
+@use "@/u" as u;
+
+.root {
+  padding: u.rem(10);
+}

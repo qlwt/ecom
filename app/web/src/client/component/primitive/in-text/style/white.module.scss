@@ -1,0 +1,116 @@
+@use "@/u" as u;
+
+.view {
+  --border-0: var(--p-border-primary-0500);
+  --border-1: var(--p-border-primary-0900);
+  --border-2: var(--p-border-primary-1600);
+
+  --color-0: var(--p-text-primary-0600);
+  --color-1: var(--p-text-primary-1000);
+  --color-2: var(--p-text-primary-1600);
+
+  border: 2px solid var(--border-0);
+
+  transition: border-color u.$trtime_fast;
+
+  &._disabled {
+    background-color: var(--p-bg-primary-1200);
+  }
+
+  &:not(._disabled) {
+    background-color: var(--p-bg-primary-0800);
+
+    &:hover {
+      border-color: var(--border-1);
+    }
+
+    &:focus-within {
+      border-color: var(--border-2);
+    }
+
+    &:where(._error) {
+      border-color: var(--p-text_error-primary-1000);
+    }
+  }
+}
+
+.icon {
+  color: var(--color-0);
+  background-color: transparent;
+
+  transition: color u.$trtime_fast;
+
+  &:not(._highlight) {
+    .view:hover & {
+      color: var(--color-1);
+    }
+
+    .view:focus-within & {
+      color: var(--color-2);
+    }
+  }
+}
+
+.block_comment {
+  color: var(--color-0);
+  background-color: transparent;
+}
+
+.icon_btn {
+  border: none;
+  outline: none;
+  position: relative;
+
+  transition: background-color u.$trtime_fast, color u.$trtime_fast;
+
+  &._highlight {
+    color: var(--p-text-s_blue-1000);
+
+    &._disabled, &._pending {
+      background-color: var(--p-bg-s_blue-0200);
+    }
+
+    &:not(&._disabled):not(&._pending) {
+      background-color: var(--p-bg-s_blue-1000);
+
+      &:hover,
+      &:focus {
+        background-color: var(--p-bg-s_blue-1100);
+      }
+
+      &:active {
+        background-color: var(--p-bg-s_blue-1200);
+      }
+    }
+  }
+
+  &:not(&._highlight) {
+    &._disabled, &._pending {
+      background-color: rgba(0, 0, 0, .06);
+    }
+
+    &:not(&._disabled):not(&._pending) {
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(0, 0, 0, .06);
+      }
+
+      &:active {
+        background-color: rgba(0, 0, 0, .08);
+      }
+    }
+  }
+}
+
+.icon_btn__content {
+  &._pending {
+    visibility: hidden;
+  }
+}
+
+.input {
+  color: var(--color-2);
+  background-color: transparent;
+}

@@ -1,0 +1,62 @@
+{
+    "name": "@fst/app-api",
+    "private": true,
+    "type": "module",
+    "version": "1.0.0",
+    "scripts": {
+        "serve": "bun ./build/entry/index.js",
+        "act:delivery_import": "bun ./build/entry/act_delivery_import.js",
+        "build": "run-s build:clean build:bundle",
+        "build:clean": "rimraf ./build",
+        "build:bundle": "rollup -c ./script/rollup/rollup.config.js"
+    },
+    "exports": {
+        "*": {
+            "import": "./*.ts",
+            "type": "./*.ts"
+        }
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-image": "^3.0.3",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-typescript": "^12.1.4",
+        "@surma/rollup-plugin-off-main-thread": "^2.2.3",
+        "@types/stream-json": "^1.7.8",
+        "@types/compression": "^1.8.1",
+        "@types/multer": "^2.0.0",
+        "@types/jsonwebtoken": "^9.0.10",
+        "@types/express": "^5.0.3",
+        "@types/pg": "^8.15.5",
+        "@types/react": "^19.1.12",
+        "@types/react-dom": "^19.1.9",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.50.1",
+        "sharp": "^0.34.5",
+        "typescript": "^5.9.2"
+    },
+    "dependencies": {
+        "firebase-admin": "^13.8.0",
+        "dotenv": "^17.2.2",
+        "multer": "^2.0.2",
+        "compression": "^1.8.1",
+        "jsonwebtoken": "^9.0.3",
+        "cookie-parser": "^1.4.7",
+        "express-rate-limit": "^8.3.2",
+        "@qyu/syntax-core": "^1.0.0",
+        "@fst/config": "workspace:@fst/config^1.0.0",
+        "@fst/cst": "workspace:@fst/cst@1.0.0",
+        "@fst/express-utils": "workspace:@fst/express-utils@1.0.0",
+        "@fst/rest": "workspace:@fst/rest@1.0.0",
+        "express": "^5.1.0",
+        "kysely": "^0.28.5",
+        "pg": "^8.16.3",
+        "stream-chain": "^3.4.1",
+        "stream-json": "^1.9.1",
+        "tslib": "^2.8.1",
+        "uuid": "^13.0.0",
+        "zod": "^4.1.8"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "@fst/db-default",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "run-s build:clean build:bundle",
+        "build:clean": "rimraf ./build",
+        "build:bundle": "rollup -c ./script/rollup/rollup.config.js",
+        "build:watch": "rollup -c ./script/rollup/rollup.config.js --watch"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-image": "^3.0.3",
+        "@rollup/plugin-json": "^6.1.0",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-typescript": "^12.1.4",
+        "typescript-transform-paths": "^3.5.5",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^5.9.2",
+        "rollup": "^4.50.1",
+        "rimraf": "^6.0.1",
+        "@fst/rest": "workspace:@fst/rest^1.0.0"
+    },
+    "dependencies": {
+        "zod": "^4.1.8",
+        "tslib": "^2.8.1",
+        "@qyu/syntax-core": "^1.0.0",
+        "@fst/cst": "workspace:@fst/cst^1.0.0",
+        "@fst/config": "workspace:@fst/config^1.0.0",
+        "@fst/syntax-search": "workspace:@fst/syntax-math^1.0.0"
+    },
+    "exports": {
+        ".": {
+            "import": "./build/entry/index.js",
+            "types": "./build/declaration/index.d.ts"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@use "@/u" as u;
+
+.container {
+  display: flex;
+  gap: u.rem(5);
+  flex-direction: column;
+
+  &._st_flexgrow {
+    flex-grow: 1;
+  }
+}
+
+.title {
+  font-size: u.rem(17);
+  margin-left: u.rem(2);
+  color: var(--p-text-primary-1200);
+}

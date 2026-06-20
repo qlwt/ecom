@@ -1,0 +1,59 @@
+@use "@/u" as u;
+
+.root {
+  display: flex;
+  gap: u.rem(20);
+  flex-direction: column;
+
+  position: sticky;
+  top: u.rem(80);
+
+  overflow: auto;
+  padding: u.rem(10);
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    flex-direction: column;
+    position: static;
+  }
+}
+
+.link {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  padding: u.rem(10) u.rem(45);
+
+  transition: color u.$trtime_fast, background-color u.$trtime_fast, box-shadow u.$trtime_fast;
+
+  &._active {
+    color: var(--p-text-s_blue-1000);
+    background-color: var(--p-bg-s_blue-1000);
+
+    box-shadow: 0 0 u.rem(15) u.rem(-5) var(--p-bg-s_blue-1000);
+  }
+
+  &:not(._active) {
+    cursor: pointer;
+
+    color: var(--p-text-primary-1000);
+    background-color: var(--p-bg-primary-0800);
+
+    box-shadow: 0 0 u.rem(15) u.rem(-5) var(--p-border-primary-1000);
+
+    &:hover, &:focus {
+      background-color: var(--p-bg-primary-1000);
+    }
+
+    &:active {
+      background-color: var(--p-bg-primary-1200);
+    }
+  }
+}

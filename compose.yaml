@@ -1,0 +1,56 @@
+services:
+  web:
+    restart: always
+
+    build: 
+      context: .
+      dockerfile: ./app/web/Dockerfile
+
+      args:
+        API_URL: http://localhost:8200
+
+    env_file: 
+      - ./app/web/.docker.env
+
+    ports:
+      - 8080:8080
+      - 8090:8090
+
+  api:
+    restart: always
+
+    depends_on:
+      - db
+
+    build: 
+      context: .
+      dockerfile: ./app/api/Dockerfile
+
+      args:
+        API_URL: http://localhost:8200
+
+    env_file: 
+      - ./app/api/.docker.env
+
+    ports:
+      - 8200:8200
+
+    volumes:
+      - storage:/repo-api/app/api/storage
+
+  db:
+    restart: always
+    image: postgres:18.3
+
+    env_file:
+      - ./db/.docker.env
+
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+    expose:
+      - "5432"
+
+volumes:
+  pgdata:
+  storage:

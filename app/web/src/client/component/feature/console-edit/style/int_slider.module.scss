@@ -1,0 +1,9 @@
+@use "@/u" as u;
+
+.slider {
+  --line-size: 6px;
+  --point-size: 18px;
+
+  font-size: u.rem(16);
+  line-height: u.rem(28);
+}

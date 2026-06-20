@@ -1,0 +1,8 @@
+{
+    "name": "fst",
+    "private": true,
+    "workspaces": [
+        "app/*",
+        "pckg/*"
+    ]
+}

@@ -1,0 +1,69 @@
+@use "@/palette";
+@use "@/font";
+@use "@/u" as u;
+
+:root {
+  --qyuddn-trtime: #{u.$trtime_fast};
+  --qyuddn-z-index: #{u.$z_dropdown};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  color: var(--p-text-primary-1000);
+  background-color: var(--p-bg-primary-1000);
+
+  @media screen and (min-width: u.$scwidth_xxl) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_xl) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_l) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_m) {
+    font-size: 0.85rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_sm) {
+    font-size: 0.75rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_xsm) {
+    font-size: 0.65rem;
+  }
+
+  @media screen and (max-width: u.$scwidth_xxsm) {
+    font-size: 0.55rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button, textarea, input {
+  color: inherit;
+  font-family: inherit;
+}
+
+#modal-root {
+  position: relative;
+  z-index: u.$z_modalroot;
+}
+
+#dropdown-root {
+  position: relative;
+  z-index: u.$z_dropdownroot;
+}

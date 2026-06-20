@@ -1,0 +1,8 @@
+.list {
+  width: 40vw;
+  height: 50vh;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}

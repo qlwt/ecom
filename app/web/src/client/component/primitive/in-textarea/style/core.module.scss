@@ -1,0 +1,15 @@
+@use "@/u" as u;
+
+.intextarea__area {
+  outline: none;
+  border-radius: 4px;
+  resize: none;
+
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  font-size: u.rem(16);
+  letter-spacing: 0.5px;
+
+  padding: 10px;
+}

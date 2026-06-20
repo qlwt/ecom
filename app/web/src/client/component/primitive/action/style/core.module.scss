@@ -1,0 +1,191 @@
+@use "@/u";
+
+$btn__fontsize__def: u.rem(16);
+$btn__fontsize: var(--action_btn-fontsize, #{$btn__fontsize__def});
+$btn__padding_hor__def: u.rem(12);
+$btn__padding_hor: var(--action_btn-padding_hor, #{$btn__padding_hor__def});
+$btn__padding_ver__def: u.rem(8);
+$btn__padding_ver: var(--action_btn-padding_ver, #{$btn__padding_ver__def});
+$btn__bgc__def: var(--p-bg-primary-0800);
+$btn__bgc: var(--action_btn-bgc, #{$btn__bgc__def});
+$btn_hover__bgc__def: var(--p-bg-primary-1100);
+$btn_hover__bgc: var(--action_btn_hover-bgc, #{$btn_hover__bgc__def});
+$btn_active__bgc__def: var(--p-bg-primary-1200);
+$btn_active__bgc: var(--action_btn_active-bgc, #{$btn_active__bgc__def});
+$btn__border__def: var(--p-border-primary-0400);
+$btn__border: var(--action_btn-border, #{$btn__border__def});
+$btn_hover__border__def: var(--p-border-primary-1000);
+$btn_hover__border: var(--action_btn_hover-border, #{$btn_hover__border__def});
+$btn_active__border__def: var(--p-border-primary-1400);
+$btn_active__border: var(--action_btn_active-border, #{$btn_active__border__def});
+$btn__bgc_active__def: var(--p-bg-s_blue-1000);
+$btn__bgc_active: var(--action_btn-bgc_active, #{$btn__bgc_active__def});
+$btn_hover__bgc_active__def: var(--p-bg-s_blue-1200);
+$btn_hover__bgc_active: var(--action_btn_hover-bgc_active, #{$btn_hover__bgc_active__def});
+$btn_active__bgc_active__def: var(--p-bg-s_blue-1300);
+$btn_active__bgc_active: var(--action_btn_active-bgc_active, #{$btn_active__bgc_active__def});
+
+.merge {
+  display: grid;
+}
+
+.merge__item {
+  grid-area: 1 / 1 / 2 / 2;
+
+  &._hidden {
+    user-select: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.root {
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+
+  transition: box-shadow u.$trtime_fast, border-color u.$trtime_fast;
+
+  &._active {
+    border-color: #{$btn__bgc_active};
+
+    &._shadow_type_normal {
+      box-shadow: 0 0 3px 1px #{$btn__bgc_active};
+    }
+
+    &:not(._disabled) {
+
+      &:hover,
+      &:active,
+      &:focus-within {
+        &._shadow_type_normal {
+          box-shadow: 0 0 5px 1px #{$btn__bgc_active};
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        border-color: #{$btn_hover__bgc_active};
+      }
+
+      &:active {
+        border-color: #{$btn_active__bgc_active};
+      }
+    }
+  }
+
+  &:not(._active) {
+    border-color: #{$btn__border};
+
+    &._shadow_type_normal {
+      box-shadow: 0 0 3px 1px #{$btn__border};
+    }
+
+    &:not(._disabled) {
+
+      &:hover,
+      &:active,
+      &:focus-within {
+        &._shadow_type_normal {
+          box-shadow: 0 0 5px 1px #{$btn__border};
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        border-color: #{$btn_hover__border};
+      }
+
+      &:active {
+        border-color: #{$btn_active__border};
+      }
+    }
+  }
+}
+
+.view {
+  display: flex;
+
+  overflow: hidden;
+
+  &._direction_row {
+    flex-direction: row;
+  }
+
+  &._direction_column {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  flex-shrink: 0;
+  font-weight: 500;
+
+  outline: none;
+  user-select: none;
+
+  font-size: #{$btn__fontsize};
+  line-height: #{$btn__fontsize};
+  color: var(--p-text-primary-1000);
+
+  padding: #{$btn__padding_ver} #{$btn__padding_hor};
+
+  &.root {
+    transition: box-shadow u.$trtime_fast, border-color u.$trtime_fast, background-color u.$trtime_fast, color u.$trtime_fast;
+  }
+
+  &:not(.root) {
+    border: none;
+
+    transition: background-color u.$trtime_fast, color u.$trtime_fast;
+  }
+
+  &._style_redclr {
+    color: var(--c-delete);
+  }
+}
+
+.btn_click,
+.btn_select,
+.btn_toggle,
+.btn_check {
+  &:not(._active) {
+    cursor: pointer;
+    background-color: #{$btn__bgc};
+
+    &:hover,
+    &:focus {
+      background-color: #{$btn_hover__bgc};
+    }
+
+    &:active {
+      background-color: #{$btn_active__bgc};
+    }
+  }
+}
+
+.btn_click,
+.btn_select,
+.btn_toggle {
+  &._active {
+    cursor: pointer;
+    color: var(--p-text-s_blue-1000);
+    background-color: #{$btn__bgc_active};
+
+    &:hover,
+    &:focus {
+      background-color: #{$btn_hover__bgc_active};
+    }
+
+    &:active {
+      background-color: #{$btn_active__bgc_active};
+    }
+  }
+}
+
+.btn_check._active {
+  color: var(--p-text-s_blue-1000);
+  background-color: #{$btn__bgc_active};
+}
