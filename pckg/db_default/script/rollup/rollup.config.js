@@ -11,7 +11,8 @@ export default defineConfig({
     input: path.resolve("./src/index.ts"),
 
     external: [
-        /node_modules/i
+        /node_modules/i,
+        /pckg\/(?!db_default)/
     ],
 
     plugins: [

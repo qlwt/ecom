@@ -12,7 +12,7 @@ export default defineConfig({
 
     external: [
         /node_modules/i,
-        /fst\/pckg\/(?!syntax-math)/
+        /pckg\/(?!syntax-math)/
     ],
 
     plugins: [

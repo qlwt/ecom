@@ -16,7 +16,7 @@ export default [
 
     external: [
         /node_modules/i,
-        /fst\/pckg\/(?!config)/
+        /pckg\/(?!config)/
     ],
 
     plugins: [

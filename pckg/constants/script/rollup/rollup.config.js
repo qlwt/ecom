@@ -29,7 +29,7 @@ export default defineConfig({
 
     external: [
         /node_modules/i,
-        /fst\/pckg\/(?!constants)/
+        /pckg\/(?!constants)/
     ],
 
     plugins: [

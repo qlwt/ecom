@@ -12,7 +12,7 @@ export default defineConfig({
 
     external: [
         /node_modules/i,
-        /fst\/pckg\/(?!express-utils)/
+        /pckg\/(?!express-utils)/
     ],
 
     plugins: [
