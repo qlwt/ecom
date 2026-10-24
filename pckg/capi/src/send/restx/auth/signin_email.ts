@@ -1,5 +1,5 @@
+import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 import { res_event } from "@src/res/event"
 import { res_new_json } from "@src/res/new/json"
 import type { ApiResponse } from "@src/res/type/ApiResponse"
@@ -21,7 +21,7 @@ export type SendRestX_AuthSignInEmail_Result = (
 export const send_restx_auth_signin_email = function(
     params: SendRestX_AuthSignInEmail_Params
 ): Promise<ApiResponse<SendRestX_AuthSignInEmail_Result>> {
-    const url = new URL(`${env_apiurl}/restx/auth/signin/email`)
+    const url = new URL(`${cst.urlbase}/restx/auth/signin/email`)
 
     const request = res_new_json<SendRestX_AuthSignInEmail_Result>({
         source: fetch(url, {

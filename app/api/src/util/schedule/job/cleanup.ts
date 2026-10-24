@@ -1,3 +1,4 @@
+import "@src/env"
 import { dbact_cleanup_all } from "@src/util/dbact/cleanup/all"
 
 const job = async function() {

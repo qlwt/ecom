@@ -1,6 +1,6 @@
 import * as cst from "@fst/cst"
+import * as env_back from "@fst/cst/env_back"
 import { db } from "@src/db/init"
-import { env_admin_email, env_admin_password } from "@src/env"
 import * as crypto from "node:crypto"
 import { v7 as uuid } from "uuid"
 
@@ -20,15 +20,15 @@ export const db_adjust = async function() {
     )
 
     if (acc) {
-        const now_password_hash = crypto.scryptSync(env_admin_password, acc.auth_password_salt, 64).toString("hex")
+        const now_password_hash = crypto.scryptSync(env_back.admin_password, acc.auth_password_salt, 64).toString("hex")
 
-        if (acc.auth_email !== env_admin_email || acc.auth_password_hash !== now_password_hash) {
+        if (acc.auth_email !== env_back.admin_email || acc.auth_password_hash !== now_password_hash) {
             console.log("updating admin account")
 
             await (db
                 .updateTable("acc_authemail")
                 .set({
-                    email: env_admin_email,
+                    email: env_back.admin_email,
                     password_hash: now_password_hash,
                 })
                 .where("acc_authemail.id", "=", acc.auth_id)
@@ -44,7 +44,7 @@ export const db_adjust = async function() {
         const acc_id = uuid()
         const auth_id = uuid()
         const password_salt = crypto.randomBytes(32).toString("hex")
-        const password_hash = crypto.scryptSync(env_admin_password, password_salt, 64).toString("hex")
+        const password_hash = crypto.scryptSync(env_back.admin_password, password_salt, 64).toString("hex")
 
         await (db
             .insertInto("acc")
@@ -74,7 +74,7 @@ export const db_adjust = async function() {
 
                 owner: acc_id,
 
-                email: env_admin_email,
+                email: env_back.admin_email,
 
                 password_hash: password_hash,
                 password_salt: password_salt,

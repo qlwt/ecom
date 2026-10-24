@@ -1,5 +1,5 @@
+import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 import { res_event } from "@src/res/event"
 import { res_new_json } from "@src/res/new/json"
 import type { ApiResponse } from "@src/res/type/ApiResponse"
@@ -22,7 +22,7 @@ export type SendRestX_DeliveryCityGet_Result = (
 export const send_restx_delivery_city_get = function (
     params: SendRestX_DeliveryCityGet_Params
 ): Promise<ApiResponse<SendRestX_DeliveryCityGet_Result>> {
-    const url = new URL(`${env_apiurl}/restx/delivery/city`)
+    const url = new URL(`${cst.urlbase}/restx/delivery/city`)
 
     for (const key of Object.keys(params.query)) {
         const value = params.query[key as keyof typeof params.query]

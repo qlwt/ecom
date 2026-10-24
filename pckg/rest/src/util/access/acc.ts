@@ -1,11 +1,11 @@
 import * as cs from "@fst/config/server"
 import * as cst from "@fst/cst"
-import { env_jwta_secret } from "@src/env"
 import { db } from "@src/db/init"
 import { jwt_schema_data } from "@src/util/jwt/schema/data"
 import * as express from "express"
 import * as jwt from "jsonwebtoken"
 import * as z from "zod"
+import * as env_back from "@fst/cst/env_back"
 
 const schema_cookies = function() {
     return z.object({
@@ -46,7 +46,7 @@ export const access_acc = async function(req: express.Request, res: express.Resp
         const status_access = jwt_data && access_status({
             data: jwt_data,
             token: jwt_access.data,
-            secret: env_jwta_secret,
+            secret: env_back.jwta_secret,
         })
 
         if (status_access) {

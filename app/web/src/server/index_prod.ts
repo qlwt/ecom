@@ -1,8 +1,10 @@
+import "@src/env"
+
 import express from "express"
 import fs from "node:fs"
 import path from "node:path"
 import compression from "compression"
-import { env_port_console, env_port_public } from "@src/env"
+import * as env_front from "@fst/cst/env_front"
 
 type Server_New_Params = {
     readonly path_html: string
@@ -48,22 +50,22 @@ export const domain_pubprod = async function(): Promise<void> {
         path_statics: path.resolve("./build/client/public"),
         path_html: path.resolve("./build/client/public/index_public.html"),
 
-        origins: [`http://localhost:${env_port_public}`]
+        origins: []
     })
 
     const app_console = await server_new({
         path_statics: path.resolve("./build/client/console"),
         path_html: path.resolve("./build/client/console/index_console.html"),
 
-        origins: [`http://localhost:${env_port_console}`]
+        origins: []
     })
 
-    app_public.listen(env_port_public, () => {
-        console.log(`App Public initialized on port ${env_port_public}`)
+    app_public.listen(env_front.webp_port, () => {
+        console.log(`App Public initialized on port ${env_front.webp_port}`)
     })
 
-    app_console.listen(env_port_console, () => {
-        console.log(`App Console initialized on port ${env_port_console}`)
+    app_console.listen(env_front.webc_port, () => {
+        console.log(`App Console initialized on port ${env_front.webc_port}`)
     })
 }
 

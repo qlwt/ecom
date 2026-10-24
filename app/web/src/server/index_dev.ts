@@ -1,6 +1,5 @@
-import "dotenv"
+import "@src/env"
 
-import { env_port_console, env_port_public } from "@src/env"
 import vite_react from "@vitejs/plugin-react"
 import express from "express"
 import fs from "node:fs"
@@ -8,6 +7,7 @@ import path from "node:path"
 import node_url from "node:url"
 import * as vite from "vite"
 import vite_tsconfigpaths from "vite-tsconfig-paths"
+import * as env_front from "@fst/cst/env_front"
 
 type Server_New_Params = {
     readonly vite_hmr_port: number
@@ -100,21 +100,21 @@ const serve = async function() {
     const app_public = await server_new({
         vite_hmr_port: 4100,
         filename: "index_public.html",
-        origins: [`http://localhost:${env_port_public}`],
+        origins: [],
     })
 
     const app_console = await server_new({
         vite_hmr_port: 4101,
         filename: "index_console.html",
-        origins: [`http://localhost:${env_port_console}`],
+        origins: [],
     })
 
-    app_public.listen(env_port_public, () => {
-        console.log(`App Public initialized on port ${env_port_public}`)
+    app_public.listen(env_front.webp_port, () => {
+        console.log(`App Public initialized on port ${env_front.webp_port}`)
     })
 
-    app_console.listen(env_port_console, () => {
-        console.log(`App Console initialized on port ${env_port_console}`)
+    app_console.listen(env_front.webc_port, () => {
+        console.log(`App Console initialized on port ${env_front.webc_port}`)
     })
 }
 

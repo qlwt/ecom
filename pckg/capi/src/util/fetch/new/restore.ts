@@ -1,6 +1,5 @@
 import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 
 export type Fetch_NewRestore_Hooks = {
     readonly noauth?: VoidFunction
@@ -19,7 +18,7 @@ export const fetch_new_restore = function(params: Fetch_NewRestore_Params): Prom
 
         request.then(response => {
             if (response.status === 401) {
-                const url = new URL(`${env_apiurl}/restx/auth/signcheck/strict`)
+                const url = new URL(`${cst.urlbase}/restx/auth/signcheck/strict`)
 
                 const restore = fetch(url, {
                     method: "POST",

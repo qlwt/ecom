@@ -1,6 +1,6 @@
 import * as cc from "@fst/config/client"
+import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 import { res_event } from "@src/res/event"
 import { res_new_json } from "@src/res/new/json"
 import type { ApiResponse } from "@src/res/type/ApiResponse"
@@ -23,7 +23,7 @@ export type SendRest_ImgDelete_Result<TName extends keyof cc.RestImg> = (
 export const send_rest_img_delete = function <TName extends keyof cc.RestImg>(
     table_name: TName, params: SendRest_ImgDelete_Params<TName>
 ): Promise<ApiResponse<SendRest_ImgDelete_Result<TName>>> {
-    const url = new URL(`${env_apiurl}/rest/${table_name}`)
+    const url = new URL(`${cst.urlbase}/rest/${table_name}`)
 
     const request = res_new_json<SendRest_ImgDelete_Result<TName>>({
         source: fetch_new_restore({

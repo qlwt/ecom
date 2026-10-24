@@ -1,8 +1,8 @@
 import * as cst from "@fst/cst"
+import * as env_back from "@fst/cst/env_back"
 import * as eu from "@fst/express-utils"
-import { env_jwta_duration, env_jwta_secret, env_jwtr_secret } from "@src/env"
-import type { Cluster_Route } from "@src/util/cluster/type/cluster"
 import { db } from "@src/db/init"
+import type { Cluster_Route } from "@src/util/cluster/type/cluster"
 import { jwt_new_auth } from "@src/util/jwt/new/auth"
 import { jwt_schema_data } from "@src/util/jwt/schema/data"
 import * as jwt from "jsonwebtoken"
@@ -66,7 +66,7 @@ export const restx_auth_route_new_signcheck_strict = function(params: RestX_Auth
                         const status_access = jwt_data && access_new({
                             data: jwt_data,
                             token: jwt_restore.data,
-                            secret: env_jwtr_secret,
+                            secret: env_back.jwtr_secret,
                         })
 
                         if (status_access) {
@@ -88,11 +88,11 @@ export const restx_auth_route_new_signcheck_strict = function(params: RestX_Auth
                             {
                                 res.cookie(
                                     cst.CookieName.JWTA,
-                                    jwt_new_auth(jwt_data.id, env_jwta_secret, env_jwta_duration),
+                                    jwt_new_auth(jwt_data.id, env_back.jwta_secret, env_back.jwta_duration),
                                     {
                                         signed: true,
                                         httpOnly: true,
-                                        expires: new Date(Date.now() + env_jwta_duration),
+                                        expires: new Date(Date.now() + env_back.jwta_duration),
                                     }
                                 )
 

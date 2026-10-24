@@ -1,5 +1,5 @@
 import * as cst from "@fst/cst"
-import { env_jwta_secret } from "@src/env"
+import * as env_back from "@fst/cst/env_back"
 import { jwt_schema_data } from "@src/util/jwt/schema/data"
 import * as express from "express"
 import * as jwt from "jsonwebtoken"
@@ -41,7 +41,7 @@ export const access_id = function(req: express.Request, res: express.Response): 
             const access = jwt_data && access_new({
                 data: jwt_data,
                 token: jwt_access.data,
-                secret: env_jwta_secret,
+                secret: env_back.jwta_secret,
             })
 
             if (access) {

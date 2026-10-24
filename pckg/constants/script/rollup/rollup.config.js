@@ -1,14 +1,31 @@
 import path from "node:path"
 import rollup_json from "@rollup/plugin-json"
 import rollup_image from "@rollup/plugin-image"
+import rollup_replace from "@rollup/plugin-replace"
 import rollup_node from "@rollup/plugin-node-resolve"
 import rollup_commonjs from "@rollup/plugin-commonjs"
 import rollup_typescript from "@rollup/plugin-typescript"
 import * as ts_transform_paths from "typescript-transform-paths"
 import { defineConfig } from "rollup";
 
+import * as dotenv from "dotenv"
+
+dotenv.config()
+
+const expect_typeof = function (value, type) {
+    if (typeof value !== type) {
+        throw new TypeError(`Value is expected to be oftype ${type}`)
+    }
+
+    return value
+}
+
 export default defineConfig({
-    input: path.resolve("./src/index.ts"),
+    input: {
+        index: path.resolve("./src/index.ts"),
+        env_back: path.resolve("./src/env_back.ts"),
+        env_front: path.resolve("./src/env_front.ts"),
+    },
 
     external: [
         /node_modules/i,
@@ -18,6 +35,14 @@ export default defineConfig({
     plugins: [
         rollup_node(),
         rollup_commonjs(),
+
+        rollup_replace({
+            preventAssignment: true,
+
+            values: {
+                "process.env.API_URL": JSON.stringify(expect_typeof(process.env.API_URL, "string"))
+            }
+        }),
 
         rollup_typescript({
             declaration: true,

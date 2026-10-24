@@ -1,6 +1,8 @@
+import "@src/env"
+
 import { setup_firebase } from "@/src/setup/firebase"
+import * as env_back from "@fst/cst/env_back"
 import * as rest from "@fst/rest"
-import { env_client_host, env_console_host, env_port } from "@src/env"
 import { schedule_cleanup } from "@src/util/schedule/cleanup"
 import { schedule_delivery_update } from "@src/util/schedule/delivery_update"
 import express from "express"
@@ -47,13 +49,13 @@ const server_new = async function(params: Server_New_Params) {
 const server_init = async function() {
     const app = await server_new({
         origins: [
-            env_client_host,
-            env_console_host
+            env_back.webc_url,
+            env_back.webp_url
         ]
     })
 
-    app.listen(env_port, () => {
-        console.log(`Api server initialized on port ${env_port}`)
+    app.listen(env_back.api_port, () => {
+        console.log(`Api server initialized on port ${env_back.api_port}`)
     })
 }
 

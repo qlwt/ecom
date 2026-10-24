@@ -43,10 +43,10 @@ That is a personal project
 - `/pckg/db_defaults/` contains default values for `Database` 
 - `/pckg/express-utils/` contains some utilities for `Backend`
 
-## How to use
+## How to run locally
 
 - Clone the repo
-- Fill in the .env files in `/app/api`, `/app/web`, `/pckg/capi` and `/app/db` following `.env.example` files
+- Fill in the `.env` files in `pckg/constants` following `.env.example` files
 - Fill in the `API_URL` env variable in `compose.yaml`
 - Install necessary docker images and do `docker compose up --build`
 - By default there will be no content, so you first go to `CONSOLE_HOST` and sign in with your `ADMIN_EMAIL` and `ADMIN_PASSWORD`

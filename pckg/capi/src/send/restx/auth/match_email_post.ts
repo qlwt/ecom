@@ -1,5 +1,5 @@
+import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 import { res_event } from "@src/res/event"
 import { res_new_json } from "@src/res/new/json"
 import type { ApiResponse } from "@src/res/type/ApiResponse"
@@ -22,7 +22,7 @@ export type SendRestX_AuthMatchEmailPost_Result = (
 export const send_restx_auth_match_email_post = function (
     params: SendRestX_AuthMatchEmailPost_Params
 ): Promise<ApiResponse<SendRestX_AuthMatchEmailPost_Result>> {
-    const url = new URL(`${env_apiurl}/restx/auth/match/email`)
+    const url = new URL(`${cst.urlbase}/restx/auth/match/email`)
 
     const request = res_new_json<SendRestX_AuthMatchEmailPost_Result>({
         source: fetch_new_restore({

@@ -1,16 +1,12 @@
 import * as cs from "@fst/config/server"
-import { env_db_host, env_db_name, env_db_password, env_db_port, env_db_user } from "@src/env"
+import * as env_back from "@fst/cst/env_back"
 import * as ksly from "kysely"
 import * as pg from "pg"
 
 export const db = new ksly.Kysely<cs.Database>({
     dialect: new ksly.PostgresDialect({
         pool: new pg.Pool({
-            password: env_db_password,
-            database: env_db_name,
-            host: env_db_host,
-            user: env_db_user,
-            port: env_db_port,
+            connectionString: env_back.db_url,
         }),
     }),
 })

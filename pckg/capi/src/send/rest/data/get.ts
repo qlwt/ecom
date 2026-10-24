@@ -1,6 +1,6 @@
 import * as cc from "@fst/config/client"
+import * as cst from "@fst/cst"
 import type * as rest from "@fst/rest"
-import { env_apiurl } from "@src/env"
 import { res_event } from "@src/res/event"
 import { res_new_json } from "@src/res/new/json"
 import type { ApiResponse } from "@src/res/type/ApiResponse"
@@ -23,7 +23,7 @@ export type SendRest_DataGet_Result<TName extends keyof cc.RestData> = (
 export const send_rest_data_get = function <TName extends keyof cc.RestData>(
     table_name: TName, params: SendRest_DataGet_Params<TName>
 ): Promise<ApiResponse<SendRest_DataGet_Result<TName>>> {
-    const url = new URL(`${env_apiurl}/rest/${table_name}`)
+    const url = new URL(`${cst.urlbase}/rest/${table_name}`)
 
     for (const key of Object.keys(params.query)) {
         const value = params.query[key as keyof typeof params.query]
